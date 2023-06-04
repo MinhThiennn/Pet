@@ -153,17 +153,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-lg-7">
-				<h5>Note 8 Pro (Gamma Green, 128 GB) (6 GB RAM)</h5>
-				<h3>₹16,766</h3>
-				<p>Available offers</p>
-				<ul>
-					<li class="pb-2"><b>Bank Offer</b> 5% Unlimited Cashback on
-						Bank Credit Card <b>T&C</b></li>
-					<li><b>Bank Offer</b> 5% Instant Discount on EMI with Bank
-						Credit and Debit Cards <b>T&C</b></li>
-				</ul>
-			</div>
+
 		</div>
 	</div>
 <jsp:include page="footer.jsp" />
