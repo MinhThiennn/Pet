@@ -18,7 +18,6 @@ public class Account {
 	String email;
 	Boolean admin;
 	String fullname;
-	String photo;
 	int Sdt;
 	String address;
 	Boolean activated;

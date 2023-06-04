@@ -25,13 +25,15 @@
 					<a href = "home">
 						<img src="../Asm-TaiNguyen/images/logo.webp" class="img-responsive" alt="" /> 
 						</a>
-						<input type="text" name="username" placeholder="Username" required
+						<input type="text" name="username" value="${username }" placeholder="Username" required
 							class="form-control input-lg" /> 
-						<input type="password" class="form-control input-lg" id="password"
+						<input type="password" name="password" class="form-control input-lg" id="password"
 							placeholder="Password" required />
-						<label><input type="checkbox"> Remember me</label>
+						<label><input type="checkbox" name="remember"> Remember me</label>
 						<button type="submit" class="btn btn-lg btn-block color">Sign
 							in</button>
+						<hr>
+						${message }	
 						<div>
 							<a href="dangki"> Sign up</a> or <a href="quenmk">Forgot password</a>
 						</div>
