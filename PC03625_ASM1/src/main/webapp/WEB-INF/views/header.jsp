@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,6 +37,9 @@
 									<li><a href="login">Đăng nhập</a></li>
 									<li role="separator" class="divider"></li>
 									<li><a href="dangki">Đăng ký thành viên</a></li>
+									<c:if test="${admin == true }">
+									<li>Xin chào ! </li>
+									</c:if>
 								</ul></li>
 							<li><a href="lienhe"
 								class="hidden-md hidden-sm hidden-xs"><span

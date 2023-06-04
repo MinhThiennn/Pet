@@ -45,14 +45,21 @@ public class loginController {
 	@PostMapping("login")
 	public String save(Model model) {
 		String un = paramService.getString("username", "");
-		String pw = paramService.getString("pasdword", "");
+		String pw = paramService.getString("password", "");
 		Boolean rm = paramService.getBoolean("remember", false);
 		
-		Account acc = dao.getById(un);
-		if(acc == null) {
+		
+		Account acc = dao.findById(un).get();
+		Boolean ad = acc.getAdmin();
+		if(acc.getAdmin()) {
+			model.addAttribute("admin", ad);
+		}
+		if(!un.equalsIgnoreCase(acc.getUsername()) || !pw.equalsIgnoreCase(acc.getPassword())) {
 			model.addAttribute("message", "Sai thông tin");
+			return "login";
 		}else {
 			sessionService.set("username", un);
+			sessionService.set("admin", ad);
 			if(rm) {
 				cookieService.add("user", un, 10);
 			}else {

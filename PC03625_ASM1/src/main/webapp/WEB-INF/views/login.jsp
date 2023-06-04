@@ -32,7 +32,6 @@
 						<label><input type="checkbox" name="remember"> Remember me</label>
 						<button type="submit" class="btn btn-lg btn-block color">Sign
 							in</button>
-						<hr>
 						${message }	
 						<div>
 							<a href="dangki"> Sign up</a> or <a href="quenmk">Forgot password</a>
