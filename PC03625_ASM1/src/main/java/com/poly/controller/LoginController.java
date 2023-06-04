@@ -32,7 +32,7 @@ public class loginController {
 	AccountDAO dao; // làm việc với bảng Account
 
 	@RequestMapping("login")
-	public String form(Model model) {
+	public String login(Model model) {
 		String user = cookieService.getValue("user");
 		if (user != null) {
 			model.addAttribute("user", user);
@@ -41,28 +41,13 @@ public class loginController {
 	}
 	
 
-//	@RequestMapping("login")
-//	public String save(Model model, @RequestParam("username") Iterable<String> username) {
-//		String un = paramService.getString("username", "");
-//		Boolean rm = paramService.getBoolean("remember", false);
-//
-//		
-//		// Kiểm tra thông tin đăng nhâp
-//		List<Account> acc = dao.findAllById(username);
-//		if (acc == null) {
-//			model.addAttribute("message", "Sai thông tin");
-//		} else {
-//			sessionService.set("username", un);
-//			if (rm) {
-//				cookieService.add("user", un, 10);
-//			} else {
-//				cookieService.remove("user");
-//			}
-//
-//			model.addAttribute("message", "Đăng nhập thành công!");
-//		}
-//
-//		return "login";
-//	}
+	@RequestMapping("login")
+	public String save() {
+		String un = paramService.getString("username", "");
+		Boolean rm = paramService.getBoolean("remember", false);
+
+
+		return "login";
+	}
 	
 }

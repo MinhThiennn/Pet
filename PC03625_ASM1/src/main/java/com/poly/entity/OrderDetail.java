@@ -20,6 +20,7 @@ public class OrderDetail implements Serializable {
 	Long id;
 	Double price;
 	Integer quantity;
+	Double tong;
 	@ManyToOne
 	@JoinColumn(name = "Productid")
 	Product product;

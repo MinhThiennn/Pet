@@ -15,11 +15,14 @@ public class Account {
 	@Id
 	String username;
 	String password;
-	String fullname;
 	String email;
-	String photo;
-	Boolean activated;
 	Boolean admin;
+	String fullname;
+	String photo;
+	int Sdt;
+	String address;
+	Boolean activated;
+	String image;
 	@OneToMany(mappedBy = "account")
 	List<Order> orders;
 }
