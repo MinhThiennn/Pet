@@ -17,7 +17,7 @@ import com.poly.service.SessionService;
 
 @Controller
 @RequestMapping("Fami")
-public class LoginController {
+public class loginController {
 
 	@Autowired
 	CookieService cookieService;
@@ -27,10 +27,10 @@ public class LoginController {
 
 	@Autowired
 	SessionService sessionService;
-	
+
 	@Autowired
 	AccountDAO dao; // làm việc với bảng Account
-	
+
 	@RequestMapping("login")
 	public String form(Model model) {
 		String user = cookieService.getValue("user");
@@ -39,16 +39,16 @@ public class LoginController {
 		}
 		return "login";
 	}
+	
 
 	@RequestMapping("login")
-	public String save(Model model, @RequestParam("username") String username) {
+	public String save(Model model, @RequestParam("username") Iterable<String> username) {
 		String un = paramService.getString("username", "");
-		String pw = paramService.getString("password", "");
 		Boolean rm = paramService.getBoolean("remember", false);
 
 		
 		// Kiểm tra thông tin đăng nhâp
-		Account acc = dao.findById(username).get();
+		List<Account> acc = dao.findAllById(username);
 		if (acc == null) {
 			model.addAttribute("message", "Sai thông tin");
 		} else {
@@ -64,4 +64,5 @@ public class LoginController {
 
 		return "login";
 	}
+	
 }
