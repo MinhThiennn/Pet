@@ -11,7 +11,7 @@
 	crossorigin="anonymous">
 
 <!-- Poly -->
-<link href="../Asm-TaiNguyen/css/index.css" rel="stylesheet" />
+<link href="../Asm-TaiNguyen/css/sanpham.css" rel="stylesheet" />
 </head>
 <body>
 	<jsp:include page="header.jsp" />
