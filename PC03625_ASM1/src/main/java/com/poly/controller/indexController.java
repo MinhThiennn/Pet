@@ -57,6 +57,6 @@ public class indexController {
 	
 	@GetMapping("nguoidung")
 	public String nguoidung() {
-		return "nguoidung";
+		return "nguoidung" ;
 	}
 }
