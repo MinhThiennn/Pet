@@ -6,5 +6,5 @@ import com.poly.entity.Account;
 													
 public interface AccountDAO extends JpaRepository <Account,String>{
 
-	aaaaaaaaaaaaaaa
+	
 }
