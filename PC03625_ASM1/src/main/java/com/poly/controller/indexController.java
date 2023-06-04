@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class indexController {
 	@GetMapping("home")
 	public String formhome() {
-		return "home";
+		return "index";
 	}
 	@GetMapping("lienhe")
 	public String lienhe() {
