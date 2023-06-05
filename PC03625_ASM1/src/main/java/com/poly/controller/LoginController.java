@@ -48,15 +48,15 @@ public class loginController {
 		String pw = paramService.getString("password", "");
 		Boolean rm = paramService.getBoolean("remember", false);
 		
-		
+		//check login
 		Account acc = dao.findById(un).get();
 		if(!un.equalsIgnoreCase(acc.getUsername()) || !pw.equalsIgnoreCase(acc.getPassword())) {
 			model.addAttribute("message", "Sai thông tin");
 			return "login";
 		}else {
-			sessionService.set("user", acc);
+			sessionService.set("user", acc); //Lưu session
 			if(rm) {
-				cookieService.add("user", un, 10);
+				cookieService.add("user", un, 10); //Lưu cookie
 			}else {
 				cookieService.remove("user");
 			}

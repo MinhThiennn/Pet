@@ -10,6 +10,8 @@
 
 	<jsp:include page="header.jsp" />
 	<jsp:include page="nav.jsp" />
+	
+	
 	<div class="container panel-body">
 		<div class="poly-sheet row">
 			<article class="col-sm-9">
