@@ -50,16 +50,11 @@ public class loginController {
 		
 		
 		Account acc = dao.findById(un).get();
-		Boolean ad = acc.getAdmin();
-		if(acc.getAdmin()) {
-			model.addAttribute("admin", ad);
-		}
 		if(!un.equalsIgnoreCase(acc.getUsername()) || !pw.equalsIgnoreCase(acc.getPassword())) {
 			model.addAttribute("message", "Sai thông tin");
 			return "login";
 		}else {
-			sessionService.set("username", un);
-			sessionService.set("admin", ad);
+			sessionService.set("user", acc);
 			if(rm) {
 				cookieService.add("user", un, 10);
 			}else {

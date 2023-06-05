@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
+	    <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,8 +10,8 @@
 	href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css"
 	integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu"
 	crossorigin="anonymous">
-	
-	<!-- Poly -->
+
+<!-- Poly -->
 <link href="../Asm-TaiNguyen/css/index.css" rel="stylesheet" />
 </head>
 <body>
@@ -31,10 +32,8 @@
 								class="glyphicon glyphicon-align-justify"></span> DANH MỤC SẢN
 								PHẨM</a></li>
 						<li><a href="home">TRANG CHỦ</a></li>
-						<li><a href="shopcho">SHOP CHO CHÓ <span
-								class="caret"></span></a></li>
-						<li><a href="shopmeo">SHOP CHO MÈO <span
-								class="caret"></span></a></li>
+						<li><a href="shopcho">SHOP CHO CHÓ <span class="caret"></span></a></li>
+						<li><a href="shopmeo">SHOP CHO MÈO <span class="caret"></span></a></li>
 						<li><a href="tintuc">TIN TỨC <span class="caret"></span></a></li>
 						<li class="dropdown"><a href="gioithieu"
 							class="dropdown-toggle" data-toggle="dropdown">GIỚI THIỆU <span
@@ -44,15 +43,16 @@
 								<li role="separator" class="divider"></li>
 								<li><a href="lienhe">Liên hệ</a></li>
 							</ul></li>
-						<li class="dropdown"><a href="#"
-							class="dropdown-toggle" data-toggle="dropdown">QUẢN LÍ <span
-								class="caret"></span></a>
-							<ul class="dropdown-menu">
-								<li><a href="nguoidung">Người dùng</a></li>
-								<li role="separator" class="divider"></li>
-								<li><a href="sanpham">Sản phẩm</a></li>
-							</ul></li>
-						
+						<c:if test="${user.admin == true }">
+							<li class="dropdown"><a href="#" class="dropdown-toggle"
+								data-toggle="dropdown">QUẢN LÍ <span class="caret"></span></a>
+								<ul class="dropdown-menu">
+									<li><a href="nguoidung">Người dùng</a></li>
+									<li role="separator" class="divider"></li>
+									<li><a href="sanpham">Sản phẩm</a></li>
+								</ul></li>
+						</c:if>
+
 					</ul>
 					<!--Menu-->
 				</div>
@@ -97,8 +97,8 @@
               <span class="sr-only">Next</span>
             </a> -->
 	</div>
-	
-	
+
+
 	<script src="https://code.jquery.com/jquery-3.7.0.js"
 		integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
 		crossorigin="anonymous"></script>

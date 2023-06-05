@@ -34,11 +34,18 @@
 								data-toggle="dropdown"><span
 									class="glyphicon glyphicon-user"></span> Tài khoản</a>
 								<ul class="dropdown-menu">
-									<li><a href="login">Đăng nhập</a></li>
-									<li role="separator" class="divider"></li>
-									<li><a href="dangki">Đăng ký thành viên</a></li>
-									<c:if test="${admin == true }">
-									<li>Xin chào ! </li>
+									<c:if test="${empty user}">
+									
+										<li><a href="login">Đăng nhập</a></li>
+										<li role="separator" class="divider"></li>
+										<li><a href="dangki">Đăng ký thành viên</a></li>
+									</c:if>
+									
+									<c:if test="${!empty user}">
+										<li><a href="doimk">Đổi mật khẩu</a></li>
+										<li role="separator" class="divider"></li>
+										<li><a href="#">Trang cá nhân</a></li>
+										<li><a href="logout">Đăng xuất</a></li>
 									</c:if>
 								</ul></li>
 							<li><a href="lienhe"
