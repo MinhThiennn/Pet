@@ -15,6 +15,6 @@ public class logoutController {
 	public String logout() {
 		sessionService.remove("user");
 		
-		return "redirect:login";
+		return "redirect:home";
 	}
 }

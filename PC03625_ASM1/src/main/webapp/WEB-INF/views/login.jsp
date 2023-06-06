@@ -27,7 +27,7 @@
 						</a>
 						<input type="text" name="username" value="${user.username }" placeholder="Username" required
 							class="form-control input-lg" /> 
-						<input type="password" name="password" class="form-control input-lg" id="password"
+						<input type="password" name="password" value="${user.password }" class="form-control input-lg" id="password"
 							placeholder="Password" required />
 						<label><input type="checkbox" name="remember"> Remember me</label>
 						<button type="submit" class="btn btn-lg btn-block color">Sign

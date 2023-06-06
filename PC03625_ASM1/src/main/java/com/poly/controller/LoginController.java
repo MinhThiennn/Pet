@@ -57,6 +57,7 @@ public class loginController {
 			sessionService.set("user", acc); //Lưu session
 			if(rm) {
 				cookieService.add("user", un, 10); //Lưu cookie
+				cookieService.add("user", pw, 10); //Lưu cookie
 			}else {
 				cookieService.remove("user");
 			}
