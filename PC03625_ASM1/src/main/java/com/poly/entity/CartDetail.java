@@ -1,9 +1,7 @@
 package com.poly.entity;
 
-import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
-
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -20,27 +18,19 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "Products")
-public class Product implements Serializable {	
+@Table(name = "CartDetails")
+public class CartDetail {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	Integer id;
-	String name;
-	String image;
-	Double price;
-	
+	Long id;
+	Integer quantity;
 	@Temporal(TemporalType.DATE)
 	@Column(name = "Createdate")
 	Date createDate = new Date();
-	Integer quantity;
-	
 	@ManyToOne
-	@JoinColumn(name = "Categoryid")
-	Category category;
-	
-	@OneToMany(mappedBy = "product")
-	List<OrderDetail> orderDetails;
-	
-	@OneToMany(mappedBy = "product")
-	List<CartDetail> cartDetails;
+	@JoinColumn(name = "Productid")
+	Product product;
+	@ManyToOne
+	@JoinColumn(name = "Cartid")
+	Cart cart;
 }

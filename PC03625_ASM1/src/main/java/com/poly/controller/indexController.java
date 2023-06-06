@@ -8,10 +8,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("Fami")
 public class indexController {
-	@GetMapping("home")
-	public String formhome() {
-		return "index";
-	}
 	@GetMapping("lienhe")
 	public String lienhe() {
 		return "lienhe";
