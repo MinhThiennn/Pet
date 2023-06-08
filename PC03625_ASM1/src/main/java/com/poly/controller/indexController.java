@@ -55,9 +55,4 @@ public class indexController {
 	public String nguoidung() {
 		return "nguoidung" ;
 	}
-	
-	@GetMapping("quanli")
-	public String quanli() {
-		return "quanli" ;
-	}
 }
