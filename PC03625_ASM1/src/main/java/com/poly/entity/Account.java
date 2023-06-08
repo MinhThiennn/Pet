@@ -24,4 +24,7 @@ public class Account {
 	String image;
 	@OneToMany(mappedBy = "account")
 	List<Order> orders;
+	
+	@OneToMany(mappedBy = "account")
+	List<Cart> carts;
 }
