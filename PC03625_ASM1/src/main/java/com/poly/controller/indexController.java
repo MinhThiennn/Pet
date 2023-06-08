@@ -20,7 +20,7 @@ public class indexController {
 	
 	@GetMapping("dangnhap")
 	public String login() {
-		return "dangnhap";
+		return "login";
 	}
 	
 	@GetMapping("dangki")

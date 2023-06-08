@@ -58,50 +58,8 @@
 							</div>
 						</c:forEach>
 					</div>
-					<div class="title_menu">
-						<div class="panel-heading">SHOP CHO MÈO</div>
-					</div>
-					<div class="row">
-						<div class="col-lg-4 col-md-4 hidden-md hidden-sm hidden-xs">
-							<div id="carousel-example-generic" class="carousel slide"
-								data-ride="carousel" data-pause="hover" data-interval="3000">
-								<div class="carousel-inner" role="listbox">
-									<div class="item">
-										<img src="../Asm-TaiNguyen/images/banner_1_electronic.webp"
-											alt="...">
-									</div>
-									<div class="item active">
-										<img src="../Asm-TaiNguyen/images/banner_2_electronic.webp"
-											alt="...">
-									</div>
-								</div>
-							</div>
-						</div>
-						
-						<c:forEach var="item" items="${itemcat}">
-							<div class="col-sm-6 col-md-4">
-								<div class="thumbnail">
-									<img src="..${item.image }" alt="...">
-									<div class="caption text-center">
-										<a class="status" href="#">${item.name }</a>
-										<div class="rating">
-											<span class="glyphicon glyphicon-star-empty"></span> <span
-												class="glyphicon glyphicon-star-empty"></span> <span
-												class="glyphicon glyphicon-star-empty"></span> <span
-												class="glyphicon glyphicon-star-empty"></span> <span
-												class="glyphicon glyphicon-star-empty"></span>
-										</div>
-										<span class="status">${item.price }₫</span>
-										<p>
-											<a href="#" class="btn btn-danger" role="button">Đặt hàng</a>
-										</p>
-									</div>
-								</div>
-							</div>
-						</c:forEach>
-						
-					</div>
 				</div>
+				
 			</article>
 			<aside class="col-sm-3">
 				<div class="panel-group" id="accordion">
@@ -129,11 +87,7 @@
 					<!--Supplier-->
 					<div class="panel panel-default">
 
-						<div class="panel-heading" data-toggle="collapse"
-							data-parent="#accordion" href="#nhacungcap">
-							<span class="glyphicon glyphicon-list-alt"></span> <strong>Thức
-								ăn cho mèo</strong>
-						</div>
+						
 
 						<div id="nhacungcap" class="list-group panel-collapse collapse">
 							<a href="#" class="list-group-item">Thức ăn</a> <a href="#"

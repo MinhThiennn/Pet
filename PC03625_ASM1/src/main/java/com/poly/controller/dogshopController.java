@@ -15,22 +15,18 @@ import com.poly.entity.Product;
 
 @Controller
 @RequestMapping("Fami")
-public class homeController {
+public class dogshopController {
 	@Autowired
 	ProductDAO productDAO;
 	
 	@Autowired
 	CategoryDAO categoryDAO;
 	
-	@GetMapping("home")
-	public String homeform(Model model) {
-		Category cat = categoryDAO.getById("1");
-		List<Product> itemcat = productDAO.findByCategory(cat);
-		model.addAttribute("itemcat", itemcat);
-		
+	@GetMapping("dogshop")
+	public String homeform(Model model) {	
 		Category dog = categoryDAO.getById("2");
 		List<Product> itemdog = productDAO.findByCategory(dog);	
 		model.addAttribute("itemdog", itemdog);
-		return "index";
+		return "dogshop";
 	}
 }
