@@ -1,74 +1,72 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
-/* Table css Start */
-a.del
-{
-    background:#d9534f;
-    border-radius: 2px; 
-    width: 35px;
-    height:28px; 
-    padding-left:12px;
-    line-height:10px;
+body{
+    background:#f3f3f4;
+    padding-top:30px;
+    font-family: 'Open Sans', sans-serif;
 }
+.userMain .userBlock{
+    float: left;
+    width: 100%;
+    box-shadow: 0px 0px 23px -3px #ccc;
+    padding-bottom: 12px;
+    margin-bottom: 30px;
+    overflow: hidden;
+    background:#fff;
+    
 
-a.edit
-{
-    padding-left:10px;
-    background:#337ab7;
-    color:#fff;
-    border-radius:2px;
-    border:none;
 }
-
-tr.row-name
-{
-    font-size: 18px;
-    color:#448aff;
+.userMain .userBlock .backgrounImg{
+    float: left;
+    overflow: hidden;
+    height: 77px;
 }
-
-tr.row-content
-{
-    color:#6c7173;
+.userMain .userBlock .backgrounImg img{
+    width: auto;
 }
-
-table
-{
-    border-bottom: 8px solid #448aff;
-}
-
-td.check
-{
+.userMain .userBlock .userImg{
     text-align: center;
 }
-
-.table-striped>tbody>tr:nth-of-type(odd)
-{
-    background:#F0F2F2 !important; 
+.userMain .userBlock .userImg img{
+    width: 80px;
+    height: 80px;
+    margin-top: -39px;
+    border-radius: 100%;
+    border: 5px solid #fff;
+    
+}
+.userMain .userBlock .userDescription{
+    text-align: center;
+}
+.userMain .userBlock .userDescription h5{
+    margin-bottom: 2px;
+    font-weight: 600;
+}
+.userMain .userBlock .userDescription p{
+    margin-bottom: 5px;
+}
+.userMain .userBlock .userDescription .btn{
+    padding: 0px 23px 0px 23px;
+    height: 22px;
+    border-radius: 0;
+    font-size: 12px;
+    background: #0198dd;
+    color: #fff;
+}
+.userMain .userBlock .userDescription .btn:hover{
+    
+    opacity:0.7;
 }
 
-a.btn-danger:hover
-{
-    background: #de6c69;
+.userMain .userBlock .followrs{
+    display: inline-flex;
+    margin-right: 10px;
+    border-right: 1px solid #ccc;
+    padding-right: 10px;
 }
-
-a.btn-danger
-{
-    background:#d9534f;  
+.userMain .userBlock .followrs .number{
+    font-size: 15px;
+    font-weight: bold;
+    margin-right: 5px;
+    margin-top: -1px;
 }
-
-a.btn-top
-{
-    background:#448aff;
-    color:#fff;
-    border:1px solid #448aff; 
-    padding: 7px 10px; 
-    border-radius:4px; 
-}
-
-a.btn-top:hover
-{
-    text-decoration: none;
-    box-shadow:3px 3px 5px #222; 
-    transition:box-shadow 0.5s; 
-}
-
-/* Table css End */

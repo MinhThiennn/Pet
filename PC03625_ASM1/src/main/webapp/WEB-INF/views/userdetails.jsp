@@ -18,11 +18,9 @@
 </head>
 <body>
 	<div class="container">
-		<h2 style="color: #448aff; text-align: center;">USERS</h2>
-		<hr>
 		<div class="row">
 			<div class="col-lg-10">
-				<form action="product">
+				<form action="#">
 					<div class="input-group">
 						<input type="text" class="form-control"
 							placeholder="Bạn muốn tìm kiếm những gì ?" name="keywords"
@@ -34,7 +32,39 @@
 				</form>
 			</div>
 		</div>
-
+		<hr>
+		<div class="row userMain">
+       <div class="col-md-3 col-sm-4">
+           <div class="userBlock">
+               <div class="backgrounImg">
+                   <img src="https://img.freepik.com/premium-vector/social-network-connection-concept_38133-143.jpg" >
+               </div>
+               <div class="userImg">
+                   <img src="https://image.ibb.co/es4AG7/author4.jpg">
+               </div>
+               <div class="userDescription">
+                   <h5>Tom Smith</h5>
+                   <p>Newyork, USA</p>
+                  
+                   
+                    <div class="followrs">
+                       <span class="number">137</span>
+                        <span>Followers</span>
+                    </div>
+                    <a href="">
+                        <button class="btn">Follow</button>
+                    </a>
+               </div>
+              
+           </div>
+       </div>
+	</div>
+	<div class="container">
+		<div class="text-center">
+			<c:forEach begin="1" end="${page.totalPages}" step="1" var="number">
+			<a href="/Fami/product?p=${number-1 }" class="btn btn-danger"><strong>${number }</strong></a>
+			</c:forEach>
+		</div>
 	</div>
 
 

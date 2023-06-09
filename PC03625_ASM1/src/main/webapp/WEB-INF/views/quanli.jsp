@@ -27,7 +27,7 @@
 							class="glyphicon glyphicon-th-list" style="font-size: 20px !Important;" aria-hidden="true"
 							aria-hidden="true"> </i>
 					</a></li>
-					<li><a href="userdetails" target="link"><i class="fa fa-sort-alpha-asc "
+					<li><a href="user" target="link"><i class="fa fa-sort-alpha-asc "
 							aria-hidden="true"> </i> <span style="margin-left: 10px;">Users</span>
 					</a></li>
 					<li><a href="userform" target="link"> <i class="fa fa-font" aria-hidden="true">

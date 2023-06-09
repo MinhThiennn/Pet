@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.fasterxml.jackson.databind.introspect.TypeResolutionContext.Empty;
 import com.poly.DAO.AccountDAO;
 import com.poly.entity.Account;
 import com.poly.service.CookieService;
@@ -50,21 +51,23 @@ public class loginController {
 		
 		//check login
 		Account acc = dao.findById(un).get();
-		if(!un.equalsIgnoreCase(acc.getUsername()) || !pw.equalsIgnoreCase(acc.getPassword())) {
-			model.addAttribute("message", "Sai thông tin");
-			return "login";
-		}else {
-			sessionService.set("user", acc); //Lưu session
-			if(rm) {
-				cookieService.add("user", un, 10); //Lưu cookie
-				cookieService.add("user", pw, 10); //Lưu cookie
+
+			if(!pw.equalsIgnoreCase(acc.getPassword())) {
+				model.addAttribute("message", "Sai thông tin");
+				return "login";
 			}else {
-				cookieService.remove("user");
+				sessionService.set("user", acc); //Lưu session
+				if(rm) {
+					cookieService.add("user", un, 10); //Lưu cookie
+					cookieService.add("user", pw, 10); //Lưu cookie
+				}else {
+					cookieService.remove("user");
+				}
+				
+				model.addAttribute("message", "Đăng nhập thành công!");
 			}
 			
-			model.addAttribute("message", "Đăng nhập thành công!");
-		}
-
+			
 		return "redirect:home";
 	}
 	
