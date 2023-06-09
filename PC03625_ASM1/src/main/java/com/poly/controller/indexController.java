@@ -10,12 +10,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.poly.DAO.AccountDAO;
 import com.poly.entity.Account;
 
+import jakarta.servlet.http.HttpSession;
+
 @Controller
 @RequestMapping("Fami")
 public class indexController {
 	
 	@Autowired
 	AccountDAO dao;
+	@Autowired
+	HttpSession session;
 	
 	@GetMapping("lienhe")
 	public String lienhe() {
@@ -29,6 +33,7 @@ public class indexController {
 	
 	@GetMapping("dangnhap")
 	public String login() {
+	    session.removeAttribute("message");
 		return "login";
 	}
 	@GetMapping("sanpham")

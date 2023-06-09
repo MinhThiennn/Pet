@@ -1,9 +1,6 @@
 package com.poly.controller;
 import java.util.List;
-
-import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
-
 import com.poly.entity.Account;
 import com.poly.DAO.AccountDAO;
 import com.poly.service.ParamService;
@@ -43,7 +40,7 @@ public class register {
 		item.setAdmin(vaiTro);
 		item.setActivated(trangThai);
 		accountDAO.save(item);
-		 session.setAttribute("message", "Tạo thành công !");
+		session.setAttribute("message", "Tạo thành công !");
 	}
 		return "redirect:dangki";
 					
