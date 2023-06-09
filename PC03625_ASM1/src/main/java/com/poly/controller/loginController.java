@@ -1,5 +1,6 @@
 package com.poly.controller;
 
+import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,10 +52,14 @@ public class loginController {
 		Boolean rm = paramService.getBoolean("remember", false);
 
 		List<Account> accs = dao.findAll();
-		if (!accs.equals(un)) {
-			model.addAttribute("message", "Sai thông tin");
-			return "login";
-		} else {
+		for (Account account : accs) {
+			if(!account.getUsername().equalsIgnoreCase(un)) {
+				model.addAttribute("message", "Sai thông tin");
+				return "login";
+			}else {
+				break;
+			}
+		}
 			// check login
 			Account acc = dao.findById(un).get();
 			if (!pw.equalsIgnoreCase(acc.getPassword())) {
@@ -71,7 +76,7 @@ public class loginController {
 
 				model.addAttribute("message", "Đăng nhập thành công!");
 			}
-		}
+		
 
 		return "redirect:home";
 	}
