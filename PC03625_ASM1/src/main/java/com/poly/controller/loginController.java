@@ -43,34 +43,37 @@ public class loginController {
 		}
 		return "login";
 	}
-	
 
 	@PostMapping("login")
 	public String save(Model model) {
 		String un = paramService.getString("username", "");
 		String pw = paramService.getString("password", "");
 		Boolean rm = paramService.getBoolean("remember", false);
-		
-		//check login
-		Account acc = dao.findById(un).get();
 
-			if(!pw.equalsIgnoreCase(acc.getPassword())) {
+		List<Account> accs = dao.findAll();
+		if (!accs.equals(un)) {
+			model.addAttribute("message", "Sai thông tin");
+			return "login";
+		} else {
+			// check login
+			Account acc = dao.findById(un).get();
+			if (!pw.equalsIgnoreCase(acc.getPassword())) {
 				model.addAttribute("message", "Sai thông tin");
 				return "login";
-			}else {
-				sessionService.set("user", acc); //Lưu session
-				if(rm) {
-					cookieService.add("user", un, 10); //Lưu cookie
-					cookieService.add("user", pw, 10); //Lưu cookie
-				}else {
+			} else {
+				sessionService.set("user", acc); // Lưu session
+				if (rm) {
+					cookieService.add("user", un, 10); // Lưu cookie
+					cookieService.add("user", pw, 10); // Lưu cookie
+				} else {
 					cookieService.remove("user");
 				}
-				
+
 				model.addAttribute("message", "Đăng nhập thành công!");
 			}
-			
-			
+		}
+
 		return "redirect:home";
 	}
-	
+
 }
