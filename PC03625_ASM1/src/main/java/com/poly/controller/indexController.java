@@ -30,12 +30,6 @@ public class indexController {
 	public String thoithieu() {
 		return "gioithieu";
 	}
-	
-	@GetMapping("login")
-	public String login() {
-	    session.removeAttribute("message");
-		return "login";
-	}
 	@GetMapping("sanpham")
 	public String product() {
 		return "sp-detail";

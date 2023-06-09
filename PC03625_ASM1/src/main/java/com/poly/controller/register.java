@@ -41,6 +41,7 @@ public class register {
 		item.setActivated(trangThai);
 		accountDAO.save(item);
 		session.setAttribute("message", "Tạo thành công !");
+		session.removeAttribute("message");
 	}
 		return "redirect:dangki";
 					
