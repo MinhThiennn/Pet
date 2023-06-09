@@ -1,13 +1,22 @@
 package com.poly.controller;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import com.poly.DAO.AccountDAO;
+import com.poly.entity.Account;
 
 @Controller
 @RequestMapping("Fami")
 public class indexController {
+	
+	@Autowired
+	AccountDAO dao;
+	
 	@GetMapping("lienhe")
 	public String lienhe() {
 		return "lienhe";
@@ -22,12 +31,6 @@ public class indexController {
 	public String login() {
 		return "login";
 	}
-	
-	@GetMapping("dangki")
-	public String singup() {
-		return "dangki";
-	}
-	
 	@GetMapping("sanpham")
 	public String product() {
 		return "sp-detail";
