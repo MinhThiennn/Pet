@@ -39,7 +39,7 @@
 						<c:forEach var="item" items="${itemdog}">
 							<div class="col-sm-6 col-md-4">
 								<div class="thumbnail">
-									<img src="..${item.image }" alt="...">
+									<img src="/images/${item.image }" alt="...">
 									<div class="caption text-center">
 										<a class="status" href="#">${item.name } 110g</a>
 										<div class="rating">
@@ -81,7 +81,7 @@
 						<c:forEach var="item" items="${itemcat}">
 							<div class="col-sm-6 col-md-4">
 								<div class="thumbnail">
-									<img src="..${item.image }" alt="...">
+									<img src="/images/${item.image }" alt="...">
 									<div class="caption text-center">
 										<a class="status" href="#">${item.name }</a>
 										<div class="rating">

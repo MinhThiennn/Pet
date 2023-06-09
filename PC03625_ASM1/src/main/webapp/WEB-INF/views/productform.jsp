@@ -45,7 +45,7 @@
 								value="${item.image }">
 						</div>
 						<div class="col-sm-6 form-group">
-							<img src="/images/${item.image }" width="100%">
+							<img src="/images/${item.image }">
 						</div>
 					</div>
 					${message }

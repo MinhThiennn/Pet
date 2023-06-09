@@ -51,11 +51,24 @@ public class productController {
 	@RequestMapping("product")
 	public String index(Model model, @RequestParam("keywords") Optional<String> kw,
 			@RequestParam("p") Optional<Integer> p) {
-		Pageable pageable = PageRequest.of(p.orElse(0), 3);
-		Page<Product> page = productDAO.findAll(pageable);
+		String kwords = kw.orElse(session.get("keywords"));
+		session.set("keywords", kwords);
+		Pageable pageable = PageRequest.of(p.orElse(0), 6);
+		Page<Product> page = productDAO.findAllByNameLike("%" + kwords + "%", pageable);
 		model.addAttribute("page", page);
 		return "productdetails";
 	}
+//	
+//	@RequestMapping("product/search")
+//	public String searchAndPage(Model model, @RequestParam("keywords") Optional<String> kw,
+//			@RequestParam("p") Optional<Integer> p) {
+//		String kwords = kw.orElse(session.get("keywords"));
+//		session.set("keywords", kwords);
+//		Pageable pageable = PageRequest.of(p.orElse(0), 6);
+//		Page<Product> page = productDAO.findAllByNameLike("%" + kwords + "%", pageable);
+//		model.addAttribute("page", page);
+//		return "productdetails";
+//	}
 	
 	@RequestMapping("product/create")
 	public String create(Model model,Product item, @RequestParam("photo_file") MultipartFile img)

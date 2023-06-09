@@ -50,9 +50,4 @@ public class indexController {
 	public String card() {
 		return "cart";
 	}
-	
-	@GetMapping("nguoidung")
-	public String nguoidung() {
-		return "nguoidung" ;
-	}
 }

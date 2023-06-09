@@ -23,12 +23,12 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-10">
-				<form action="">
+				<form action="product">
 					<div class="input-group">
 						<input type="text" class="form-control"
 							placeholder="Bạn muốn tìm kiếm những gì ?" name="keywords"
-							value="${keywords}"> <span class="input-group-addon"><a
-							class="glyphicon glyphicon-search" role="button"></a></span>
+							value="${keywords}"> <span class="input-group-addon">
+							<button style="width: 100%; height: 100%" class="glyphicon glyphicon-search"></button></span>
 					</div>
 				</form>
 			</div>
@@ -62,7 +62,7 @@
 		<div class="text-center">
 			<c:forEach begin="1" end="${page.totalPages}" step="1" var="number">
 			<a href="/Fami/product?p=${number-1 }" class="btn btn-danger"><strong>${number }</strong></a>
-		</c:forEach>
+			</c:forEach>
 		</div>
 	</div>
 	<script src="https://code.jquery.com/jquery-3.7.0.js"

@@ -27,8 +27,11 @@
 							class="glyphicon glyphicon-th-list" style="font-size: 20px !Important;" aria-hidden="true"
 							aria-hidden="true"> </i>
 					</a></li>
-					<li><a href="nguoidung" target="link"><i class="fa fa-sort-alpha-asc "
+					<li><a href="userdetails" target="link"><i class="fa fa-sort-alpha-asc "
 							aria-hidden="true"> </i> <span style="margin-left: 10px;">Users</span>
+					</a></li>
+					<li><a href="userform" target="link"> <i class="fa fa-font" aria-hidden="true">
+						</i> <span style="margin-left: 10px;"> Section</span>
 					</a></li>
 					<li><a href="product" target="link"> <i class="fa fa-play-circle-o "
 							aria-hidden="true"> </i> <span style="margin-left: 10px;">
@@ -37,9 +40,6 @@
 					<li><a href="product/form" target="link"> <i class="fa fa-puzzle-piece"
 							aria-hidden="true"> </i> <span style="margin-left: 10px;">
 								Product Detail</span>
-					</a></li>
-					<li><a href="#"> <i class="fa fa-font" aria-hidden="true">
-						</i> <span style="margin-left: 10px;"> Section</span>
 					</a></li>
 					<li><a href="#"><i class="fa fa-info-circle "
 							aria-hidden="true"> </i> <span style="margin-left: 10px;">Section
