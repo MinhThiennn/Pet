@@ -1,5 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,14 +27,13 @@
 	               	<hr>
 	            </div> 
 				<div class="main-login main-center">
-					<form class="form-horizontal" method="post" action="#">
-						
+					<form:form action="/Fami/dangki" modelAttribute="item" method="post" enctype="multipart/form-data">
 						<div class="form-group">
-							<label for="name" class="cols-sm-2 control-label">Your Name</label>
+							<label for="name" class="cols-sm-2 control-label">Full Name</label>
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-align-justify" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="name" id="name"  placeholder="Enter your Name"/>
+									<form:input type="text" class="form-control" name="name" path="fullname" id="name"  placeholder="Enter your Name"/>
 								</div>
 							</div>
 						</div>
@@ -43,7 +43,7 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="email" id="email"  placeholder="Enter your Email"/>
+									<form:input type="text" class="form-control" path="email" name="email" id="email"  placeholder="Enter your Email"/>
 								</div>
 							</div>
 						</div>
@@ -53,7 +53,7 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-user" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="username" id="username"  placeholder="Enter your Username"/>
+									<form:input type="text" class="form-control" path="username" name="username" id="username"  placeholder="Enter your Username"/>
 								</div>
 							</div>
 						</div>
@@ -63,7 +63,7 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-lock" aria-hidden="true"></i></span>
-									<input type="password" class="form-control" name="password" id="password"  placeholder="Enter your Password"/>
+									<form:input type="password" class="form-control" path="password" name="password" id="password"  placeholder="Enter your Password"/>
 								</div>
 							</div>
 						</div>
@@ -83,7 +83,7 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="confirm" id="confirm"  placeholder="Phone"/>
+									<form:input type="number" class="form-control" path="Sdt" name="confirm" id="confirm"  placeholder="Phone"/>
 								</div>
 							</div>
 						</div>
@@ -93,18 +93,19 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-pushpin" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="confirm" id="confirm"  placeholder="Address"/>
+									<form:input type="text" class="form-control" path="address" name="confirm" id="confirm"  placeholder="Address"/>
 								</div>
 							</div>
 						</div>
-						
+							<h3>${message}</h3>
 						<div class="form-group ">
-							<button type="button" class="btn  btn-lg btn-block login-button color">Register</button>
+							<button formaction="/Fami/create" class="btn  btn-lg btn-block login-button color">Register</button>
 						</div>
 						<div class="login-register">
 				            <a href="dangnhap">Login</a>
 				         </div>
-					</form>
+					</form:form >
+				
 				</div>
 				
 			</div>

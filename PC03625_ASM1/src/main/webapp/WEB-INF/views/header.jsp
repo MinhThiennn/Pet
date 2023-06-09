@@ -44,7 +44,7 @@
 									<c:if test="${!empty user}">
 										<li><a href="doimk">Đổi mật khẩu</a></li>
 										<li role="separator" class="divider"></li>
-										<li><a href="#">Trang cá nhân</a></li>
+										<li><a href="thongtinnguoidung">Trang cá nhân</a></li>
 										<li><a href="logout">Đăng xuất</a></li>
 									</c:if>
 								</ul></li>
