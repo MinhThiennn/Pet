@@ -31,7 +31,7 @@ public class indexController {
 		return "gioithieu";
 	}
 	
-	@GetMapping("dangnhap")
+	@GetMapping("login")
 	public String login() {
 	    session.removeAttribute("message");
 		return "login";

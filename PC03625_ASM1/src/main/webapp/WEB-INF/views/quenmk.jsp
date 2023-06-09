@@ -54,7 +54,7 @@
 							<button type="button" class="btn  btn-lg btn-block login-button color">Forgot password</button>
 						</div>
 							<div class="login-register">
-				            <a href="dangnhap">Login</a>
+				            <a href="login">Login</a>
 				         </div>
 					</form>
 				</div>

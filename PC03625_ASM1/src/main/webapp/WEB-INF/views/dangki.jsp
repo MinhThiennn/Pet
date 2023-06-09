@@ -102,7 +102,7 @@
 							<button formaction="/Fami/create" class="btn  btn-lg btn-block login-button color">Register</button>
 						</div>
 						<div class="login-register">
-				            <a href="dangnhap">Login</a>
+				            <a href="login">Login</a>
 				         </div>
 					</form:form >
 				
