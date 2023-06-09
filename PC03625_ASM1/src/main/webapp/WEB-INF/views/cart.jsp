@@ -73,7 +73,8 @@
 					</a></td>
 				</tr>
 			</tfoot>
-			<
+			</table>
+			</div>
 
 			<jsp:include page="footer.jsp" />
 

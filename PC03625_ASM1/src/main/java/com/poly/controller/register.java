@@ -40,8 +40,8 @@ public class register {
 		item.setAdmin(vaiTro);
 		item.setActivated(trangThai);
 		accountDAO.save(item);
-		session.setAttribute("message", "Tạo thành công !");
 		session.removeAttribute("message");
+		session.setAttribute("message", "Tạo thành công !");
 	}
 		return "redirect:dangki";
 					
