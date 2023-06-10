@@ -35,7 +35,9 @@ public class loginController {
 
 	@Autowired
 	AccountDAO dao; // làm việc với bảng Account
-
+	@Autowired
+	HttpSession session;
+	
 	@GetMapping("login")
 	public String login(Model model) {
 		String user = cookieService.getValue("user");

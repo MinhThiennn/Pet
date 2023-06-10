@@ -29,7 +29,7 @@ public class register {
 	}
 	
 	@PostMapping("create")
-	public String register(Account item,HttpSession session){
+	public String register(Account item,Model model){
 		String pw = paramService.getString("password", "");
 		String cf = paramService.getString("confirm", "");
 		if(!pw.equals(cf)) {
@@ -40,7 +40,6 @@ public class register {
 		item.setAdmin(vaiTro);
 		item.setActivated(trangThai);
 		accountDAO.save(item);
-		session.removeAttribute("message");
 		session.setAttribute("message", "Tạo thành công !");
 	}
 		return "redirect:dangki";

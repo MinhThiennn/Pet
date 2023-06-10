@@ -1,5 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,7 +28,7 @@
 	               	<hr>
 	            </div> 
 				<div class="main-login main-center">
-					<form class="form-horizontal" method="post" action="#">
+					<form:form action="/Fami/quenmk" modelAttribute="item" method="post" enctype="multipart/form-data">
 						
 					
 
@@ -35,7 +37,7 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="email" id="email"  placeholder="Enter your Email"/>
+									<form:input type="text" class="form-control" path="email" name="email" id="email"  placeholder="Enter your Email"/>
 								</div>
 							</div>
 						</div>
@@ -45,18 +47,20 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-user" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="username" id="username"  placeholder="Enter your Username"/>
+									<form:input type="text" class="form-control" path="username" name="username" id="username"  placeholder="Enter your Username"/>
 								</div>
 							</div>
 						</div>
-						
+					 <c:if test="${not empty message}">
+                <div class="alert alert-info">${message}</div>
+            </c:if>
 						<div class="form-group ">
-							<button type="button" class="btn  btn-lg btn-block login-button color">Forgot password</button>
+							<button formaction="/Fami/sendmail" class="btn  btn-lg btn-block login-button color">Forgot password</button>
 						</div>
 							<div class="login-register">
 				            <a href="login">Login</a>
 				         </div>
-					</form>
+					</form:form>
 				</div>
 				
 			</div>
