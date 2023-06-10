@@ -42,21 +42,17 @@ public class productController {
 	@Autowired
 	ServletContext app;
 	
-	@RequestMapping("product/form")
-	public String form(Model model) {
-		Product item = new Product();
-		model.addAttribute("item", item);
-		return "productform";
-	}
 	@RequestMapping("product")
 	public String index(Model model, @RequestParam("keywords") Optional<String> kw,
 			@RequestParam("p") Optional<Integer> p) {
+		Product item = new Product();
+		model.addAttribute("item", item);
 		String kwords = kw.orElse(session.get("keywords"));
 		session.set("keywords", kwords);
 		Pageable pageable = PageRequest.of(p.orElse(0), 6);
 		Page<Product> page = productDAO.findAllByNameLike("%" + kwords + "%", pageable);
 		model.addAttribute("page", page);
-		return "productdetails";
+		return "productadmin";
 	}
 //	
 //	@RequestMapping("product/search")
@@ -83,12 +79,16 @@ public class productController {
 	}
 	
 	@RequestMapping("product/edit/{id}")
-	public String edit(Model model, @PathVariable("id") Integer id) {
+	public String edit(Model model, @PathVariable("id") Integer id, @RequestParam("keywords") Optional<String> kw,
+			@RequestParam("p") Optional<Integer> p) {
 		Product item = productDAO.findById(id).get();
 		model.addAttribute("item", item);
-		List<Product> items = productDAO.findAll();
-		model.addAttribute("items", items);
-		return "productform";
+		String kwords = kw.orElse(session.get("keywords"));
+		session.set("keywords", kwords);
+		Pageable pageable = PageRequest.of(p.orElse(0), 6);
+		Page<Product> page = productDAO.findAllByNameLike("%" + kwords + "%", pageable);
+		model.addAttribute("page", page);
+		return "productadmin";
 	}
 	
 	@RequestMapping("product/update")
@@ -100,7 +100,7 @@ public class productController {
 		item.setImage(filename);
 		productDAO.save(item);
 		model.addAttribute("message", "Sửa sản phẩm thành công");
-		return "redirect:/Fami/product/edit/" + item.getId();
+		return "redirect:/Fami/product";
 	}
 	
 	@RequestMapping("product/delete/{id}")

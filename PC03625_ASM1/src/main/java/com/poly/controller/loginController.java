@@ -51,34 +51,26 @@ public class loginController {
 		String pw = paramService.getString("password", "");
 		Boolean rm = paramService.getBoolean("remember", false);
 
-		List<Account> accs = dao.findAll();
-		for (Account account : accs) {
-			if (!account.getUsername().equalsIgnoreCase(un)) {
-				model.addAttribute("message", "Sai thông tin");
-				return "login";
-			}else {
-				break;
-			}
-		}
 		// check login
-		Account acc = dao.findById(un).get();
-		if (!pw.equalsIgnoreCase(acc.getPassword())) {
+		Account acc = dao.findByUsernameAndPassword(un, pw);
+		if (acc != null) {
+			if (pw.equalsIgnoreCase(acc.getPassword())) {
+				sessionService.set("user", acc); // Lưu session
+				if (rm) {
+					cookieService.add("user", un, 10); // Lưu cookie
+					cookieService.add("user", pw, 10); // Lưu cookie
+				} else {
+					cookieService.remove("user");
+				}
+			} else if (acc.getActivated() == false) {
+				model.addAttribute("message", "Tài khoản của bạn đã bị khóa");
+				return "login";
+			}
+
+		} else {
 			model.addAttribute("message", "Sai thông tin");
 			return "login";
-		} else if (acc.getActivated() == false) {
-			model.addAttribute("message", "Tài khoản của bạn đã bị khóa");
-			return "login";
-		} else {
-			sessionService.set("user", acc); // Lưu session
-			if (rm) {
-				cookieService.add("user", un, 10); // Lưu cookie
-				cookieService.add("user", pw, 10); // Lưu cookie
-			} else {
-				cookieService.remove("user");
-			}
 		}
-
 		return "redirect:home";
 	}
-
 }

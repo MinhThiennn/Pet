@@ -9,7 +9,11 @@
 	href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css"
 	integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu"
 	crossorigin="anonymous">
-
+<link
+	href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
+	rel="stylesheet">
+<script
+	src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <!-- Poly -->
 <link href="../Asm-TaiNguyen/css/sanpham.css" rel="stylesheet" />
 </head>
@@ -17,8 +21,8 @@
 
 	<jsp:include page="header.jsp" />
 	<jsp:include page="nav.jsp" />
-	
 	<div class="container">
+	<form action="" modelAttribute="item">
 		<div class="card">
 			<div class="container-fliud">
 				<div class="wrapper row">
@@ -26,37 +30,15 @@
 
 						<div class="preview-pic tab-content">
 							<div class="tab-pane active" id="pic-1">
-								<img src="http://placekitten.com/400/252" />
+								<img src="/images/${item.image }" />
 							</div>
-							<div class="tab-pane" id="pic-2">
-								<img src="http://placekitten.com/400/252" />
-							</div>
-							<div class="tab-pane" id="pic-3">
-								<img src="http://placekitten.com/400/252" />
-							</div>
-							<div class="tab-pane" id="pic-4">
-								<img src="http://placekitten.com/400/252" />
-							</div>
-							<div class="tab-pane" id="pic-5">
-								<img src="http://placekitten.com/400/252" />
-							</div>
+						
 						</div>
-						<ul class="preview-thumbnail nav nav-tabs">
-							<li class="active"><a data-target="#pic-1" data-toggle="tab"><img
-									src="http://placekitten.com/200/126" /></a></li>
-							<li><a data-target="#pic-2" data-toggle="tab"><img
-									src="http://placekitten.com/200/126" /></a></li>
-							<li><a data-target="#pic-3" data-toggle="tab"><img
-									src="http://placekitten.com/200/126" /></a></li>
-							<li><a data-target="#pic-4" data-toggle="tab"><img
-									src="http://placekitten.com/200/126" /></a></li>
-							<li><a data-target="#pic-5" data-toggle="tab"><img
-									src="http://placekitten.com/200/126" /></a></li>
-						</ul>
+						
 
 					</div>
 					<div class="details col-md-6">
-						<h3 class="product-title">men's shoes fashion</h3>
+						<h3 class="product-title" >${item.name}</h3>
 						<div class="rating">
 							<div class="stars">
 								<span class="fa fa-star checked"></span> <span
@@ -64,11 +46,9 @@
 									class="fa fa-star checked"></span> <span class="fa fa-star"></span>
 								<span class="fa fa-star"></span>
 							</div>
-							<span class="review-no">41 reviews</span>
+							<span class="review-no">41 đánh giá</span>
 						</div>
-						<p class="product-description">Suspendisse quos? Tempus cras
-							iure temporibus? Eu laudantium cubilia sem sem! Repudiandae et!
-							Massa senectus enim minim sociosqu delectus posuere.</p>
+						<p class="product-description">Sản phẩm giúp mang lại trải nghiệm tuyệt vời cho thú cưng của bạn.</p>
 						<h4 class="price">
 							current price: <span>$180</span>
 						</h4>
@@ -76,17 +56,8 @@
 							<strong>91%</strong> of buyers enjoyed this product! <strong>(87
 								votes)</strong>
 						</p>
-						<h5 class="sizes">
-							sizes: <span class="size" data-toggle="tooltip" title="small">s</span>
-							<span class="size" data-toggle="tooltip" title="medium">m</span>
-							<span class="size" data-toggle="tooltip" title="large">l</span> <span
-								class="size" data-toggle="tooltip" title="xtra large">xl</span>
-						</h5>
-						<h5 class="colors">
-							colors: <span class="color orange not-available"
-								data-toggle="tooltip" title="Not In store"></span> <span
-								class="color green"></span> <span class="color blue"></span>
-						</h5>
+						
+						
 						<div class="action">
 							<button class="add-to-cart btn btn-default" type="button">add
 								to cart</button>
@@ -98,6 +69,7 @@
 				</div>
 			</div>
 		</div>
+		</form>
 	</div>
 	<jsp:include page="footer.jsp" />
 

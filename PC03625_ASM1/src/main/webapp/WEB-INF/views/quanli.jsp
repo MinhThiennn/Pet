@@ -18,7 +18,6 @@
 <div class="container">
 	<div class="row">
 		<div id="wrapper">
-			
 			<!-- Sidebar -->
 			<div id="sidebar-wrapper">
 				<ul class="sidebar-nav" style="margin-left: 0;">
@@ -37,10 +36,6 @@
 							aria-hidden="true"> </i> <span style="margin-left: 10px;">
 								Products</span>
 					</a></li>
-					<li><a href="product/form" target="link"> <i class="fa fa-puzzle-piece"
-							aria-hidden="true"> </i> <span style="margin-left: 10px;">
-								Product Detail</span>
-					</a></li>
 					<li><a href="#"><i class="fa fa-info-circle "
 							aria-hidden="true"> </i> <span style="margin-left: 10px;">Section
 						</span> </a></li>
@@ -56,7 +51,7 @@
 			<div id="page-content-wrapper">
 					<div class="row">
 					<div class="col-lg-12">
-						<iframe src="" frameborder="0" name="link"></iframe>
+						<iframe src="user" frameborder="0" name="link"></iframe>
 					</div>
 					</div>
 			</div>

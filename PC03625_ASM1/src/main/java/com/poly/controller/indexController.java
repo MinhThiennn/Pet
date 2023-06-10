@@ -15,9 +15,7 @@ import jakarta.servlet.http.HttpSession;
 @Controller
 @RequestMapping("Fami")
 public class indexController {
-	
-	@Autowired
-	AccountDAO dao;
+
 	@Autowired
 	HttpSession session;
 	

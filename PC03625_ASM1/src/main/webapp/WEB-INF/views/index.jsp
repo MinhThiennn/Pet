@@ -6,6 +6,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<!-- Poly -->
+<link href="../Asm-TaiNguyen/css/index.css" rel="stylesheet" />
 </head>
 <body>
 
@@ -39,7 +41,7 @@
 						<c:forEach var="item" items="${itemdog}">
 							<div class="col-sm-6 col-md-4">
 								<div class="thumbnail">
-									<img src="/images/${item.image }" alt="...">
+									<img src="/images/${item.image }"  alt="...">
 									<div class="caption text-center">
 										<a class="status" href="#">${item.name } 110g</a>
 										<div class="rating">
@@ -51,7 +53,7 @@
 										</div>
 										<span class="status">${item.price }₫</span>
 										<p>
-											<a href="#" class="btn btn-danger" role="button">Đặt hàng</a>
+											<a href="/Fami/spdetails/edit/${item.id }" class="btn btn-danger" role="button">Đặt hàng</a>
 										</p>
 									</div>
 								</div>
@@ -93,7 +95,7 @@
 										</div>
 										<span class="status">${item.price }₫</span>
 										<p>
-											<a href="#" class="btn btn-danger" role="button">Đặt hàng</a>
+											<a href="/Fami/spdetails/edit/${item.id }" class="btn btn-danger" role="button">Đặt hàng</a>
 										</p>
 									</div>
 								</div>

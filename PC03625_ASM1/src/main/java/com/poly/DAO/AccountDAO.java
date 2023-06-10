@@ -7,8 +7,10 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.poly.entity.Account;
-													
-public interface AccountDAO extends JpaRepository <Account,String>{
+import com.poly.entity.Product;
 
+public interface AccountDAO extends JpaRepository<Account, String> {
+
+	Account findByUsernameAndPassword(String username, String password);
 
 }
