@@ -4,6 +4,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.poly.DAO.AccountDAO;
@@ -24,15 +26,12 @@ public class Forgot {
 	ParamService paramService;
 	@Autowired
 	HttpSession session;
-	@RequestMapping("quenmk")
-	public String quenmk(Model model) {
-		Account item = new Account();
-		model.addAttribute("item", item);
-		List<Account> items = accountDAO.findAll();
-		model.addAttribute("items", items);
+	@GetMapping("quenmk")
+	public String forgot(Model model) {
+		//session.removeAttribute("message");
 		return "quenmk";
 	}
-	@RequestMapping("sendmail")
+	@PostMapping("quenmk")
 	public String sendmail(Model model) {
 		List<Account> items = accountDAO.findAll();
 		model.addAttribute("items", items);
@@ -51,12 +50,14 @@ public class Forgot {
      }
              }
              if(check==true){
-            	 session.setAttribute("message", "Mật khẩu đã được gửi về mail, vui lòng kiểm tra !");
+         		 model.addAttribute("message", "Mật khẩu đã được gửi về mail, vui lòng kiểm tra !");     		 
             	 mailer.send(email, "Bạn đang thực hiện chức năng quên mật khẩu ", "Mật khẩu của bạn là:"+ps);
+            	 return "quenmk";
        
              }else{
-            	 session.setAttribute("message", "Không tồn tại email hoặc username !");
+         		model.addAttribute("message", "Không tồn tại email hoặc username !");
+         		return "quenmk";
              }
-		return "redirect:quenmk";
+		//return "redirect:quenmk";
 	}
 }

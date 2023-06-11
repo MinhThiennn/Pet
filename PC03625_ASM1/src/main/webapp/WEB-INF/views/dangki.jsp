@@ -28,7 +28,7 @@
 	               	<hr>
 	            </div> 
 				<div class="main-login main-center">
-					<form:form action="/Fami/dangki" modelAttribute="item" method="post" enctype="multipart/form-data">
+					<form:form action="dangki" modelAttribute="item" method="post" enctype="multipart/form-data">
 						<div class="form-group">
 							<label for="name" class="cols-sm-2 control-label">Full Name</label>
 							<div class="cols-sm-10">
@@ -102,7 +102,7 @@
                 <div class="alert alert-info">${message}</div>
             </c:if>
 						<div class="form-group ">
-							<button formaction="/Fami/create" class="btn  btn-lg btn-block login-button color">Register</button>
+							<button type="submit" name="register" class="btn  btn-lg btn-block login-button color">Register</button>
 						</div>
 						<div class="login-register">
 				            <a href="login">Login</a>
