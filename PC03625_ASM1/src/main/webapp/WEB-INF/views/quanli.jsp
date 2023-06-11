@@ -14,27 +14,32 @@
 	rel="stylesheet">
 <!-- Poly -->
 <link href="../Asm-TaiNguyen/css/admin.css" rel="stylesheet" />
+<link href="../Asm-TaiNguyen/css/index.css" rel="stylesheet" />
 </head>
 <div class="container">
 	<div class="row">
 		<div id="wrapper">
 			<!-- Sidebar -->
 			<div id="sidebar-wrapper">
+				<div class="logo">
+					
+				</div>
 				<ul class="sidebar-nav" style="margin-left: 0;">
-					<li class="sidebar-brand"><a href="#menu-toggle"
-						id="menu-toggle" style="margin-top: 20px; float: right;"> <i
-							class="glyphicon glyphicon-th-list" style="font-size: 20px !Important;" aria-hidden="true"
-							aria-hidden="true"> </i>
+					<li>
+					<a href="/Fami/home" class="logo-wrapper "> <img
+						src="../Asm-TaiNguyen/images/logo.webp" width="150px" style="margin: 15px" alt="logo ">
+					</a>
+					</li>
+					<li><a href="user" target="link"><i
+							class="fa fa-sort-alpha-asc " aria-hidden="true"> </i> <span
+							style="margin-left: 10px;">Users</span> </a></li>
+					<li><a href="userform" target="link"> <i
+							class="fa fa-font" aria-hidden="true"> </i> <span
+							style="margin-left: 10px;"> Section</span>
 					</a></li>
-					<li><a href="user" target="link"><i class="fa fa-sort-alpha-asc "
-							aria-hidden="true"> </i> <span style="margin-left: 10px;">Users</span>
-					</a></li>
-					<li><a href="userform" target="link"> <i class="fa fa-font" aria-hidden="true">
-						</i> <span style="margin-left: 10px;"> Section</span>
-					</a></li>
-					<li><a href="product" target="link"> <i class="fa fa-play-circle-o "
-							aria-hidden="true"> </i> <span style="margin-left: 10px;">
-								Products</span>
+					<li><a href="product" target="link"> <i
+							class="fa fa-play-circle-o " aria-hidden="true"> </i> <span
+							style="margin-left: 10px;"> Products</span>
 					</a></li>
 					<li><a href="#"><i class="fa fa-info-circle "
 							aria-hidden="true"> </i> <span style="margin-left: 10px;">Section
@@ -46,26 +51,26 @@
 				</ul>
 			</div>
 			<!-- /#sidebar-wrapper -->
+		</div>
+		<!-- Page Content -->
+		<div id="page-content-wrapper">
+			<div class="row">
+				<div class="col-lg-12">
+					<iframe src="user" frameborder="0" name="link"></iframe>
 				</div>
-			<!-- Page Content -->
-			<div id="page-content-wrapper">
-					<div class="row">
-					<div class="col-lg-12">
-						<iframe src="user" frameborder="0" name="link"></iframe>
-					</div>
-					</div>
 			</div>
+		</div>
 
 
 
 
 
 
-			<!-- /#page-content-wrapper -->
+		<!-- /#page-content-wrapper -->
 
-		
+
 		<!-- /#wrapper -->
-</div>
+	</div>
 
 
 

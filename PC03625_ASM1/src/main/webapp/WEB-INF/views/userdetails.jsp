@@ -41,6 +41,7 @@
 								<br> Phone:
 								<form:input path="sdt" placeholder="Phone"
 									class="form-control" />
+								<form:input path="admin" hidden="hidden" />
 								<br> Address:
 								<form:input path="address" placeholder="Address"
 									class="form-control" />
@@ -54,7 +55,7 @@
 						${message }
 						<button formaction="/Fami/user/create" class="btn btn-danger">Create</button>
 						<button formaction="/Fami/user/update" class="btn btn-danger">Update</button>
-						<button formaction="/Fami/user" class="btn btn-danger">Reset</button>
+						<button formaction="../Fami/user" class="btn btn-danger">Reset</button>
 					</div>
 				</div>
 			</form:form>

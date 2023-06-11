@@ -28,10 +28,6 @@ public class indexController {
 	public String thoithieu() {
 		return "gioithieu";
 	}
-	@GetMapping("sanpham")
-	public String product() {
-		return "sp-detail";
-	}
 	
 	@GetMapping("thanhtoan")
 	public String cardtt() {

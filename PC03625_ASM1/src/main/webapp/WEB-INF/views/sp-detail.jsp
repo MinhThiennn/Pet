@@ -21,6 +21,7 @@
 
 	<jsp:include page="header.jsp" />
 	<jsp:include page="nav.jsp" />
+	
 	<div class="container">
 	<form action="" modelAttribute="item">
 		<div class="card">
@@ -50,7 +51,7 @@
 						</div>
 						<p class="product-description">Sản phẩm giúp mang lại trải nghiệm tuyệt vời cho thú cưng của bạn.</p>
 						<h4 class="price">
-							current price: <span>$180</span>
+							current price: <span>${item.price }</span>
 						</h4>
 						<p class="vote">
 							<strong>91%</strong> of buyers enjoyed this product! <strong>(87
@@ -71,6 +72,7 @@
 		</div>
 		</form>
 	</div>
+	
 	<jsp:include page="footer.jsp" />
 
 

@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
+	<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,11 +32,12 @@
 				</tr>
 			</thead>
 			<tbody>
+ 			<c:forEach var="item" items="${items }"> 
 				<tr>
 					<td data-th="Product">
 						<div class="row">
 							<div class="col-sm-2 hidden-xs">
-								<img src="http://placehold.it/100x100" alt="..."
+								<img src="" alt="..."
 									class="img-responsive" />
 							</div>
 							<div class="col-sm-10">
@@ -45,8 +48,8 @@
 							</div>
 						</div>
 					</td>
-					<td data-th="Price">$1.99</td>
-					<td data-th="Quantity"><input type="number"
+					<td> ${item.product.name }</td>
+					<td><input type="number"
 						class="form-control text-center" value="1"></td>
 					<td data-th="Subtotal" class="text-center">1.99</td>
 					<td class="actions" data-th="">
@@ -58,6 +61,7 @@
 						</button>
 					</td>
 				</tr>
+ 				</c:forEach>
 			</tbody>
 			<tfoot>
 				<tr class="visible-xs">
@@ -73,17 +77,17 @@
 					</a></td>
 				</tr>
 			</tfoot>
-			</table>
-			</div>
+		</table>
+	</div>
 
-			<jsp:include page="footer.jsp" />
+	<jsp:include page="footer.jsp" />
 
-			<script src="https://code.jquery.com/jquery-3.7.0.js"
-				integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
-				crossorigin="anonymous"></script>
-			<script
-				src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js"
-				integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
-				crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.7.0.js"
+		integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js"
+		integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+		crossorigin="anonymous"></script>
 </body>
 </html>

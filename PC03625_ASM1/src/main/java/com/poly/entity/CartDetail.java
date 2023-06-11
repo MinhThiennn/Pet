@@ -18,18 +18,22 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "CartDetails")
+@Table(name = "Cartdetails")
 public class CartDetail {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	Long id;
+	long id;
 	Integer quantity;
+	Double price;
+	
 	@Temporal(TemporalType.DATE)
 	@Column(name = "Createdate")
 	Date createDate = new Date();
+	
 	@ManyToOne
 	@JoinColumn(name = "Productid")
 	Product product;
+	
 	@ManyToOne
 	@JoinColumn(name = "Cartid")
 	Cart cart;

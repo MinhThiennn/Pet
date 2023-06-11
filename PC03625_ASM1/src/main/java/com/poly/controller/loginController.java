@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.fasterxml.jackson.databind.introspect.TypeResolutionContext.Empty;
 import com.poly.DAO.AccountDAO;
+import com.poly.DAO.CartDAO;
 import com.poly.entity.Account;
+import com.poly.entity.Cart;
 import com.poly.service.CookieService;
 import com.poly.service.ParamService;
 import com.poly.service.SessionService;
@@ -35,6 +37,9 @@ public class loginController {
 
 	@Autowired
 	AccountDAO dao; // làm việc với bảng Account
+	
+	@Autowired
+	CartDAO cartDAO;
 
 	@GetMapping("login")
 	public String login(Model model) {
@@ -56,6 +61,12 @@ public class loginController {
 		if (acc != null) {
 			if (pw.equalsIgnoreCase(acc.getPassword())) {
 				sessionService.set("user", acc); // Lưu session
+				Cart cart = cartDAO.findByAccountUsername(un);
+				if(cart == null) {
+					Cart cartsaveCart = new Cart();
+					cartsaveCart.setAccount(acc);
+					cartDAO.save(cartsaveCart);
+				}
 				if (rm) {
 					cookieService.add("user", un, 10); // Lưu cookie
 					cookieService.add("user", pw, 10); // Lưu cookie

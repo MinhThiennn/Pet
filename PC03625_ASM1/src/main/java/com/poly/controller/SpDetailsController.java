@@ -27,11 +27,18 @@ public class SpDetailsController {
 	@Autowired
 	ServletContext app;
 	
-	@RequestMapping("spdetails/edit/{id}")
-	public String index (Model model, @PathVariable("id")Integer id) {
+	@RequestMapping("sanpham/edit/{id}")
+	public String edit (Model model, @PathVariable("id")Integer id) {
 	Product item = productDAO.findById(id).get();
 	model.addAttribute("item", item);
 	return "sp-detail";
+	}
+	
+	@RequestMapping("sanpham")
+	public String index(Model model) {
+		Product item = new Product();
+		model.addAttribute("item", item);
+		return "sp-detail";
 	}
 	
 }

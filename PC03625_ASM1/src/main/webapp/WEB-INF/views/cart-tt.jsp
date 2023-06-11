@@ -17,7 +17,7 @@
 <body>
 	<jsp:include page="header.jsp" />
 	<jsp:include page="nav.jsp" />
-	
+
 	<div class="container panel-body">
 		<div class="poly-sheet row">
 			<article class="col-sm-6">
@@ -33,43 +33,7 @@
 						</tr>
 					</thead>
 					<tbody>
-						<%-- 								<c:forEach var="cartDetail" items="${sessionScope.cart.detail}"> --%>
-						<tr id="tr-${cartDetail.value.masp}">
-							<td><img alt=""
-								src="../Asm-TaiNguyen/images/cat-ve-sinh-huong-ca-phe.webp" width="50px">
-							</td>
-							<td>Cát vệ sinh hương cà phê</td>
-							<td><input id="slMua-${cartDetail.value.masp}"
-								onchange="updateCart('${cartDetail.value.masp}')" type="text"
-								class="input-mini" value="${cartDetail.value.slMua}"></td>
-							<td><fmt:formatNumber type="text" maxFractionDigits="3"
-									value="${cartDetail.value.giasp}" />300000</td>
-							<td><span id="totalSP-${cartDetail.value.masp}"> <fmt:formatNumber
-										type="text" maxFractionDigits="3"
-										value="${cartDetail.value.giasp * cartDetail.value.slMua}" />
-							</span>0.0</td>
-						</tr>
-						<input type="hidden" id="giaSP-${cartDetail.value.masp}"
-							value="${cartDetail.value.giasp}" />
-						<!-- 								</c:forEach> -->
-						<tr id="tr-${cartDetail.value.masp}">
-							<td><img alt=""
-								src="../Asm-TaiNguyen/images/dung-cu-lam-sach-long-cho-meo.webp" width="50px">
-							</td>
-							<td>Dụng cụ làm sạch lông chó mèo</td>
-							<td><input id="slMua-${cartDetail.value.masp}"
-								onchange="updateCart('${cartDetail.value.masp}')" type="number"
-								class="input-mini" value="${cartDetail.value.slMua}"></td>
-							<td><fmt:formatNumber type="number" maxFractionDigits="3"
-									value="${cartDetail.value.giasp}" />150000</td>
-							<td><span id="totalSP-${cartDetail.value.masp}"> <fmt:formatNumber
-										type="number" maxFractionDigits="3"
-										value="${cartDetail.value.giasp * cartDetail.value.slMua}" />
-							</span>0.0</td>
-						</tr>
-						<input type="hidden" id="giaSP-${cartDetail.value.masp}"
-							value="${cartDetail.value.giasp}" />
-						<!-- 								</c:forEach> -->
+							<td></td>
 					</tbody>
 				</table>
 			</article>
@@ -94,7 +58,7 @@
 			</aside>
 		</div>
 	</div>
-	
+
 	<jsp:include page="footer.jsp" />
 
 

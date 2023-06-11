@@ -28,14 +28,13 @@
 					</div>
 					<div class="col-lg-6 col-md-5 col-sm-12 col-xs-12">
 						<ul class="topbar_right">
-							<li><img src="Asm-TaiNguyen/images/VI.gif" alt="">
+							<li><img src="../Asm-TaiNguyen/images/VI.gif" alt="">
 							</li>
 							<li class="dropdown"><a href="#" class="dropdown-toggle"
 								data-toggle="dropdown"><span
 									class="glyphicon glyphicon-user"></span> Tài khoản</a>
 								<ul class="dropdown-menu">
 									<c:if test="${empty user}">
-									
 										<li><a href="login">Đăng nhập</a></li>
 										<li role="separator" class="divider"></li>
 										<li><a href="dangki">Đăng ký thành viên</a></li>

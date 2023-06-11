@@ -20,9 +20,11 @@ public class Cart {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	Integer id;
+	
 	@ManyToOne
 	@JoinColumn(name = "Username")
 	Account account;
+	
 	@OneToMany(mappedBy = "cart")
 	List<CartDetail> cartDetails;
 }

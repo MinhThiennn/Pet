@@ -82,7 +82,11 @@ public class userController {
 		String filename = img.getOriginalFilename();
 		File file = new File(app.getRealPath("/images/" + filename));
 		img.transferTo(file);
-		item.setAdmin(false);
+		if(item.getAdmin()) {
+			item.setAdmin(true);
+		}else {
+			item.setAdmin(false);
+		}
 		item.setActivated(true);
 		item.setImage(filename);
 		accountDAO.save(item);
