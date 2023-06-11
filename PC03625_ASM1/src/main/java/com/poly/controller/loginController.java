@@ -14,8 +14,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.fasterxml.jackson.databind.introspect.TypeResolutionContext.Empty;
 import com.poly.DAO.AccountDAO;
 import com.poly.DAO.CartDAO;
+import com.poly.DAO.CartDetailsDAO;
 import com.poly.entity.Account;
 import com.poly.entity.Cart;
+import com.poly.entity.ReportCountProduct;
 import com.poly.service.CookieService;
 import com.poly.service.ParamService;
 import com.poly.service.SessionService;
@@ -40,6 +42,9 @@ public class loginController {
 	
 	@Autowired
 	CartDAO cartDAO;
+	
+	@Autowired
+	CartDetailsDAO cartDetailsDAO;
 
 	@Autowired
 	HttpSession session;
@@ -65,6 +70,8 @@ public class loginController {
 			if (pw.equalsIgnoreCase(acc.getPassword())) {
 				sessionService.set("user", acc); // Lưu session
 				Cart cart = cartDAO.findByAccountUsername(un);
+				List<ReportCountProduct> countpr = cartDetailsDAO.getCountProductCart(cart.getId());
+				model.addAttribute("countpr", countpr);
 				if(cart == null) {
 					Cart cartsaveCart = new Cart();
 					cartsaveCart.setAccount(acc);
@@ -85,6 +92,7 @@ public class loginController {
 			model.addAttribute("message", "Sai thông tin");
 			return "login";
 		}
+		
 		return "redirect:home";
 	}
 }

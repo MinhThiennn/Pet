@@ -10,6 +10,7 @@ import org.springframework.data.jpa.repository.Query;
 
 import com.poly.entity.Category;
 import com.poly.entity.Product;
+import com.poly.entity.ReportCountProduct;
 import com.poly.entity.CartDetail;
 
 
@@ -20,5 +21,6 @@ public interface ProductDAO extends JpaRepository <Product,Integer>{
 	Page<Product> findAllByNameLike(String keywords, Pageable pageable);
 	
 	Page<Product> findAllByCategory(Category caterogy, Pageable pageable);
+	
 	
 }
