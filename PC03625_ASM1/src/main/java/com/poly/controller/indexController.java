@@ -33,11 +33,6 @@ public class indexController {
 	public String cardtt() {
 		return "cart-tt";
 	}
-	
-	@GetMapping("quenmk")
-	public String quenmk() {
-		return "quenmk";
-	}
 	@GetMapping("doimk")
 	public String doimk() {
 		return "doimk";

@@ -41,6 +41,9 @@ public class loginController {
 	@Autowired
 	CartDAO cartDAO;
 
+	@Autowired
+	HttpSession session;
+	
 	@GetMapping("login")
 	public String login(Model model) {
 		String user = cookieService.getValue("user");
