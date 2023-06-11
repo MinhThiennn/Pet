@@ -24,8 +24,6 @@ public class CartDetail {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	long id;
 	Integer quantity;
-	Double price;
-	
 	@Temporal(TemporalType.DATE)
 	@Column(name = "Createdate")
 	Date createDate = new Date();
