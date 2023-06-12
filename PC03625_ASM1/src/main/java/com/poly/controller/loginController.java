@@ -39,16 +39,16 @@ public class loginController {
 
 	@Autowired
 	AccountDAO dao; // làm việc với bảng Account
-	
+
 	@Autowired
 	CartDAO cartDAO;
-	
+
 	@Autowired
 	CartDetailsDAO cartDetailsDAO;
 
 	@Autowired
 	HttpSession session;
-	
+
 	@GetMapping("login")
 	public String login(Model model) {
 		String user = cookieService.getValue("user");
@@ -70,15 +70,16 @@ public class loginController {
 			if (pw.equalsIgnoreCase(acc.getPassword())) {
 				sessionService.set("user", acc); // Lưu session
 				Cart cart = cartDAO.findByAccountUsername(un);
-				
-				if(cart == null) {
+
+				if (cart == null) {
 					Cart cartsaveCart = new Cart();
 					cartsaveCart.setAccount(acc);
 					cartDAO.save(cartsaveCart);
-				}else {
+				} else {
 					List<ReportCountProduct> countpr = cartDetailsDAO.getCountProductCart(cart.getId());
 					model.addAttribute("countpr", countpr);
 				}
+				
 				if (rm) {
 					cookieService.add("user", un, 10); // Lưu cookie
 					cookieService.add("user", pw, 10); // Lưu cookie
@@ -94,7 +95,7 @@ public class loginController {
 			model.addAttribute("message", "Sai thông tin");
 			return "login";
 		}
-		
+
 		return "redirect:home";
 	}
 }
