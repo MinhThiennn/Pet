@@ -70,8 +70,8 @@ public class loginController {
 			if (pw.equalsIgnoreCase(acc.getPassword())) {
 				sessionService.set("user", acc); // Lưu session
 				Cart cart = cartDAO.findByAccountUsername(un);
-				List<ReportCountProduct> countpr = cartDetailsDAO.getCountProductCart(cart.getId());
-				model.addAttribute("countpr", countpr);
+			//	List<ReportCountProduct> countpr = cartDetailsDAO.getCountProductCart(cart.getId());
+			//	model.addAttribute("countpr", countpr);
 				if(cart == null) {
 					Cart cartsaveCart = new Cart();
 					cartsaveCart.setAccount(acc);
