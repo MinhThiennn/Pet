@@ -73,33 +73,31 @@ public class loginController {
 
 				if (cart == null) {
 
-			//	List<ReportCountProduct> countpr = cartDetailsDAO.getCountProductCart(cart.getId());
-			//	model.addAttribute("countpr", countpr);
-				if(cart == null) {
-					Cart cartsaveCart = new Cart();
-					cartsaveCart.setAccount(acc);
-					cartDAO.save(cartsaveCart);
-				} else {
-					List<ReportCountProduct> countpr = cartDetailsDAO.getCountProductCart(cart.getId());
-					model.addAttribute("countpr", countpr);
+					// List<ReportCountProduct> countpr =
+					// cartDetailsDAO.getCountProductCart(cart.getId());
+					// model.addAttribute("countpr", countpr);
+					if (cart == null) {
+						Cart cartsaveCart = new Cart();
+						cartsaveCart.setAccount(acc);
+						cartDAO.save(cartsaveCart);
+					}
+
+					if (rm) {
+						cookieService.add("user", un, 10); // Lưu cookie
+						cookieService.add("user", pw, 10); // Lưu cookie
+					} else {
+						cookieService.remove("user");
+					}
+				} else if (acc.getActivated() == false) {
+					model.addAttribute("message", "Tài khoản của bạn đã bị khóa");
+					return "login";
 				}
-				
-				if (rm) {
-					cookieService.add("user", un, 10); // Lưu cookie
-					cookieService.add("user", pw, 10); // Lưu cookie
-				} else {
-					cookieService.remove("user");
-				}
-			} else if (acc.getActivated() == false) {
-				model.addAttribute("message", "Tài khoản của bạn đã bị khóa");
+
+			} else {
+				model.addAttribute("message", "Sai thông tin");
 				return "login";
 			}
-
-		} else {
-			model.addAttribute("message", "Sai thông tin");
-			return "login";
 		}
-
 		return "redirect:home";
 	}
 }
