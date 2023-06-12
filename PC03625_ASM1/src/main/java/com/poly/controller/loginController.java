@@ -70,12 +70,14 @@ public class loginController {
 			if (pw.equalsIgnoreCase(acc.getPassword())) {
 				sessionService.set("user", acc); // Lưu session
 				Cart cart = cartDAO.findByAccountUsername(un);
-				List<ReportCountProduct> countpr = cartDetailsDAO.getCountProductCart(cart.getId());
-				model.addAttribute("countpr", countpr);
+				
 				if(cart == null) {
 					Cart cartsaveCart = new Cart();
 					cartsaveCart.setAccount(acc);
 					cartDAO.save(cartsaveCart);
+				}else {
+					List<ReportCountProduct> countpr = cartDetailsDAO.getCountProductCart(cart.getId());
+					model.addAttribute("countpr", countpr);
 				}
 				if (rm) {
 					cookieService.add("user", un, 10); // Lưu cookie
