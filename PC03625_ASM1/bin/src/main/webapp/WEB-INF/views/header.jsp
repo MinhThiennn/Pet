@@ -32,7 +32,7 @@
 							</li>
 							<li class="dropdown"><a href="#" class="dropdown-toggle"
 								data-toggle="dropdown"><span
-									class="glyphicon glyphicon-user"></span> User : ${user.username}</a>
+									class="glyphicon glyphicon-user"></span> Tài khoản</a>
 								<ul class="dropdown-menu">
 									<c:if test="${empty user}">
 										<li><a href="login">Đăng nhập</a></li>
@@ -43,7 +43,7 @@
 									<c:if test="${!empty user}">
 										<li><a href="doimk">Đổi mật khẩu</a></li>
 										<li role="separator" class="divider"></li>
-										<li><a href="trangcanhan">Trang cá nhân</a></li>
+										<li><a href="thongtinnguoidung">Trang cá nhân</a></li>
 										<li><a href="logout">Đăng xuất</a></li>
 									</c:if>
 								</ul></li>
