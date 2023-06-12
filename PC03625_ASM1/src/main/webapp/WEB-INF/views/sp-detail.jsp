@@ -23,7 +23,8 @@
 	<jsp:include page="nav.jsp" />
 	
 	<div class="container">
-	<form action="" modelAttribute="item">
+	<form action="/Fami/sanpham/edit/${item.id }"
+						method="post">
 		<div class="card">
 			<div class="container-fliud">
 				<div class="wrapper row">
@@ -60,23 +61,55 @@
 						
 						
 						<div class="action">
-							<button class="add-to-cart btn btn-default" type="button">add
-								to cart</button>
+							<button type="submit" class="btn btn-primary px-3">
+								<i class="fa fa-shopping-cart mr-1"></i>Add to cart
+							</button>
 							<button class="like btn btn-default" type="button">
 								<span class="fa fa-heart"></span>
 							</button>
 						</div>
+			
+						
 					</div>
 				</div>
 			</div>
 		</div>
 		</form>
+					<!-- Modal -->
+					<div class="modal fade" id="exampleModal" tabindex="-1"
+						aria-labelledby="exampleModalLabel" aria-hidden="true">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title" id="exampleModalLabel">${alert}</h5>
+									<!-- <button type="button" class="close" data-dismiss="modal"
+											aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+										</button> -->
+								</div>
+								<div class="modal-body">${content}</div>
+								<div class="modal-footer">
+									<!-- <button type="button" class="btn btn-secondary"
+											data-dismiss="modal">Close</button> -->
+									<button type="button" class="btn btn-primary"
+										data-dismiss="modal">OK</button>
+								</div>
+							</div>
+						</div>
+					</div>
 	</div>
 	
 	<jsp:include page="footer.jsp" />
 
 
-
+<script type="text/javascript">
+	
+	function check2(u){
+        if(u == true){
+            $("#exampleModal").modal("show");
+        }
+    }
+	</script>
 
 	<script src="https://code.jquery.com/jquery-3.7.0.js"
 		integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="

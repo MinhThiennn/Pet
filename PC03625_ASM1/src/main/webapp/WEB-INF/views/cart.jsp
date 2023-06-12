@@ -50,12 +50,9 @@
 						class="form-control text-center" name="quantity" value="1"></td>
 					<td data-th="Subtotal" class="text-center">${item.product.price }</td>
 					<td class="actions" data-th="">
-						<button class="btn btn-info btn-sm">
-							<i class="fa fa-refresh"></i>
-						</button>
-						<button class="btn btn-danger btn-sm">
-							<i class="fa fa-trash-o"></i>
-						</button>
+						<a type="button" href="/sanpham/remove/${item.id}" class="btn btn-danger btn-sm">
+							<i class="fa fa-trash-o"></i>Remove
+						</a>
 					</td>
 				</tr>
  				</c:forEach>

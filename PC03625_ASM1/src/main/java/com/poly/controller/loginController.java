@@ -72,6 +72,10 @@ public class loginController {
 				Cart cart = cartDAO.findByAccountUsername(un);
 
 				if (cart == null) {
+
+			//	List<ReportCountProduct> countpr = cartDetailsDAO.getCountProductCart(cart.getId());
+			//	model.addAttribute("countpr", countpr);
+				if(cart == null) {
 					Cart cartsaveCart = new Cart();
 					cartsaveCart.setAccount(acc);
 					cartDAO.save(cartsaveCart);
