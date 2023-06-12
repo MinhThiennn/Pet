@@ -2,11 +2,13 @@ package com.poly.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import com.poly.DAO.CategoryDAO;
 import com.poly.DAO.ProductDAO;
+import com.poly.entity.CartDetail;
 import com.poly.entity.Product;
 import com.poly.service.SessionService;
 import com.poly.service.ShoppingCartService;
@@ -30,7 +32,7 @@ public class SpDetailsController {
 	@Autowired
 	ShoppingCartService cart;
 	
-	@RequestMapping("sanpham/edit/{id}")
+	@GetMapping("sanpham/edit/{id}")
 	public String edit (Model model, @PathVariable("id")Integer id) {
 	Product item = productDAO.findById(id).get();
 	model.addAttribute("item", item);
@@ -47,9 +49,9 @@ public class SpDetailsController {
 //	public String add(@PathVariable("id") int id, Model model) {
 //		//String quality = req.getParameter("quality");
 //		Product product = productDAO.getById(id);			
-//		Product entity = new Product();
+//		CartDetail entity = new CartDetail ();
 //		entity.setId(id);
-//		entity.setImage(product.getImage());
+//		entity.set(product.getImage());
 //		entity.setName(product.getName());
 //		entity.setPrice(product.getPrice());
 //		entity.setQuantity(product.getQuantity());		
