@@ -43,10 +43,11 @@ public class SpDetailsController {
 	public String index(Model model) {
 		Product item = new Product();
 		model.addAttribute("item", item);
+		model.addAttribute("check", false);
 		return "sp-detail";
 	}
-//	@PostMapping("sanpham/edit/{id}")
-//	public String add(@PathVariable("id") int id, Model model) {
+	@PostMapping("sanpham/edit/{id}")
+	public String add(@PathVariable("id") int id, Model model) {
 //		//String quality = req.getParameter("quality");
 //		Product product = productDAO.getById(id);			
 //		CartDetail entity = new CartDetail ();
@@ -57,9 +58,9 @@ public class SpDetailsController {
 //		entity.setQuantity(product.getQuantity());		
 //		cart.add(id, entity);		
 //		session.set("countProduct", cart.getCount());
-//		model.addAttribute("alert", "Thông báo!");
-//		model.addAttribute("content", "Sản phẩm đã được thêm vào giỏ hàng!");
-//		model.addAttribute("check", true);
-//		return "sp-detail";
-//	}
+		model.addAttribute("alert", "Thông báo!");
+		model.addAttribute("content", "Sản phẩm đã được thêm vào giỏ hàng!");
+		model.addAttribute("check", true);
+		return "sp-detail";
+	}
 }

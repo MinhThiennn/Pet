@@ -17,7 +17,7 @@
 <!-- Poly -->
 <link href="../Asm-TaiNguyen/css/sanpham.css" rel="stylesheet" />
 </head>
-<body>
+<body onload="check2(${check})">
 
 	<jsp:include page="header.jsp" />
 	<jsp:include page="nav.jsp" />
