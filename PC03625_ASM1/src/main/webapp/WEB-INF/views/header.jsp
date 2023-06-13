@@ -38,8 +38,6 @@
 											alt="">
 									</c:if>
 							</a>
-								<span
-									class="glyphicon glyphicon-user"></span> User : ${user.username}</a>
 								<ul class="dropdown-menu">
 									<c:if test="${empty user}">
 										<li><a href="login">Đăng nhập</a></li>
