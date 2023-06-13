@@ -38,7 +38,7 @@
 											alt="">
 									</c:if>
 							</a>
-								data-toggle="dropdown"><span
+								<span
 									class="glyphicon glyphicon-user"></span> User : ${user.username}</a>
 								<ul class="dropdown-menu">
 									<c:if test="${empty user}">
