@@ -55,6 +55,14 @@ public class cartController {
 //		cartDetailsDAO.save(cartdetail);
 //	}
 
+	@RequestMapping("cart/update/{id}")
+	public String update(@PathVariable("id") Integer id, @RequestParam("quantity") Integer quantity) {
+		CartDetail cartdetail = cartDetailsDAO.findById(id).get();
+		cartdetail.setQuantity(quantity);
+		cartDetailsDAO.save(cartdetail);
+		return "redirect:/Fami/cart";
+	}
+
 	@RequestMapping("cart/add/{productid}")
 	public String add(Model model, CartDetail cartdetail, @PathVariable("productid") Integer productid) {
 		Account acc = sessionService.get("user");
@@ -64,12 +72,16 @@ public class cartController {
 		CartDetail cartcheck = cartDetailsDAO.findByProduct(product);
 		int quantt = 1;
 		if (cartcheck != null) {
-			
+			quantt = cartdetail.getQuantity() + 1;
+			cartdetail.setQuantity(quantt);
+			cartDetailsDAO.save(cartdetail);
+		} else {
+			cartdetail.setCart(cart);
+			cartdetail.setProduct(product);
+			cartdetail.setQuantity(quantt);
+			cartDetailsDAO.save(cartdetail);
 		}
-		cartdetail.setCart(cart);
-		cartdetail.setProduct(product);
-		cartdetail.setQuantity(quantt);
-		cartDetailsDAO.save(cartdetail);
+
 		return "redirect:/Fami/cart";
 	}
 
