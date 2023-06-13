@@ -54,7 +54,7 @@
 										</div>
 										<span class="status">${item.price }₫</span>
 										<p>
-											<a href="/Fami/sanpham/edit/${item.id }" class="btn btn-danger" role="button">Đặt hàng</a>
+											<a href="/Fami/cart/add/${item.id}" class="btn btn-danger" role="button">Đặt hàng</a>
 										</p>
 									</div>
 								</div>
@@ -96,7 +96,7 @@
 										</div>
 										<span class="status">${item.price }₫</span>
 										<p>
-											<a href="/Fami/sanpham/edit/${item.id }" class="btn btn-danger" role="button">Đặt hàng</a>
+											<a href="/Fami/cart/add/${item.id}" class="btn btn-danger" role="button">Đặt hàng</a>
 										</p>
 									</div>
 								</div>

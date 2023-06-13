@@ -9,6 +9,8 @@ import org.springframework.data.jpa.repository.Query;
 import com.poly.entity.Cart;
 import com.poly.entity.CartDetail;
 import com.poly.entity.ReportCountProduct;
+import com.poly.entity.Product;
+
 
 
 public interface CartDetailsDAO extends JpaRepository <CartDetail,Integer> {
@@ -19,5 +21,5 @@ public interface CartDetailsDAO extends JpaRepository <CartDetail,Integer> {
 	@Query("Select count(cd.cart.id) From CartDetail cd where cd.cart.id = ?1")
 	List<ReportCountProduct> getCountProductCart(Integer id);
 
-	
+	CartDetail findByProduct(Product product);
 }

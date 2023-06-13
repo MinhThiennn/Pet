@@ -9,7 +9,6 @@ import com.poly.DAO.CategoryDAO;
 import com.poly.DAO.ProductDAO;
 import com.poly.entity.Product;
 import com.poly.service.SessionService;
-import com.poly.service.ShoppingCartService;
 import jakarta.servlet.ServletContext;
 import jakarta.servlet.http.HttpServletRequest;
 
@@ -27,8 +26,6 @@ public class SpDetailsController {
 
 	@Autowired
 	ServletContext app;
-	@Autowired
-	ShoppingCartService cart;
 	
 	@RequestMapping("sanpham/edit/{id}")
 	public String edit (Model model, @PathVariable("id")Integer id) {

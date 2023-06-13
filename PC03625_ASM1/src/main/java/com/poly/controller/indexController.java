@@ -37,8 +37,4 @@ public class indexController {
 	public String doimk() {
 		return "doimk";
 	}
-	@GetMapping("giohang")
-	public String card() {
-		return "cart";
-	}
 }

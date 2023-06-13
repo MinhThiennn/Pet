@@ -207,3 +207,7 @@ aside .panel .panel-heading{
 .thumbnail img{
     height: 150px;
 }
+
+.imageUser{
+	border-radius: 250px 250px 250px 250px;
+}

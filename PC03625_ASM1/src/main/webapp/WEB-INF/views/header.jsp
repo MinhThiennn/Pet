@@ -31,8 +31,13 @@
 							<li><img src="../Asm-TaiNguyen/images/VI.gif" alt="">
 							</li>
 							<li class="dropdown"><a href="#" class="dropdown-toggle"
-								data-toggle="dropdown"><span
-									class="glyphicon glyphicon-user"></span> Tài khoản</a>
+								data-toggle="dropdown"> <c:if test="${empty user}">
+										<span class="glyphicon glyphicon-user"></span> Tài khoản
+								</c:if> <c:if test="${!empty user}">
+										<img class="imageUser" width="30px" height="30px" src="/images/${user.image }"
+											alt="">
+									</c:if>
+							</a>
 								<ul class="dropdown-menu">
 									<c:if test="${empty user}">
 										<li><a href="login">Đăng nhập</a></li>
