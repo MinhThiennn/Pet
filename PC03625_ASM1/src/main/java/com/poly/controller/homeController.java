@@ -53,7 +53,6 @@ public class homeController {
 		Category dog = categoryDAO.getById("2");
 		List<Product> itemdog = productDAO.findByCategory(dog);	
 		model.addAttribute("itemdog", itemdog);
-		
 		return "index";
 	}
 }
