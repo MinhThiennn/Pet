@@ -69,19 +69,16 @@ public class cartController {
 	@RequestMapping("cart/add/{productid}")
 	public String add(Model model, CartDetail cartdetail, @PathVariable("productid") Integer productid) {
 		Account acc = sessionService.get("user");
-		Product product = productDAO.findById(productid).get();
 		Cart cart = cartDAO.findByAccountUsername(acc.getUsername());
-
+		Product product = productDAO.findById(productid).get();
+		int idcart = cart.getId();
 		CartDetail cartcheck = cartDetailsDAO.findByProduct(product);
-		int quantt = 1;
 		if (cartcheck != null) {
-			quantt = cartdetail.getQuantity() + 1;
-			cartdetail.setQuantity(quantt);
-			cartDetailsDAO.save(cartdetail);
+			update(idcart, cartcheck.getQuantity()+1);
 		} else {
 			cartdetail.setCart(cart);
 			cartdetail.setProduct(product);
-			cartdetail.setQuantity(quantt);
+			cartdetail.setQuantity(1);
 			cartDetailsDAO.save(cartdetail);
 		}
 

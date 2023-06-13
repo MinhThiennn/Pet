@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -80,11 +81,11 @@
 				<tr class="row-name">
 					<th>Id</th>
 					<th>Name</th>
-					<th>Quantity</th>
-					<th>Price</th>
-					<th>CreateDate</th>
+					<th class="text-center">Quantity</th>
+					<th class="text-center">Price</th>
+					<th class="text-center">CreateDate</th>
 					<th>Image</th>
-					<th>EDIT</th>
+					<th class="text-center">EDIT</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -92,11 +93,13 @@
 					<tr class="row-content">
 						<td>${item.id }</td>
 						<td>${item.name }</td>
-						<td>${item.quantity }</td>
-						<td>${item.price }</td>
-						<td>${item.createDate }</td>
+						<td class="text-center">${item.quantity }</td>
+						<td class="text-center"><fmt:formatNumber
+									value="${item.price}" type="currency"
+									maxFractionDigits="3" currencyCode="VND" pattern="#,##0.##" />₫</td>
+						<td class="text-center">${item.createDate }</td>
 						<td><img src="/images/${item.image }" height="30px"></td>
-						<td><a class="btn btn-danger edit"
+						<td class="text-center"><a class="btn btn-danger edit"
 							href="/Fami/product/delete/${item.id}" aria-label="Settings">
 								<i class="fa fa-trash" aria-hidden="true"></i>
 						</a> &nbsp <a class="btn btn-info edit"

@@ -80,13 +80,12 @@
 								</div>
 							</div>
 						</div>
-						
 						<c:forEach var="item" items="${itemcat}">
 							<div class="col-sm-6 col-md-4">
 								<div class="thumbnail">
-									<img src="/images/${item.image }" alt="...">
+									<img src="/images/${item.image }"  alt="...">
 									<div class="caption text-center">
-										<a class="status" href="#">${item.name }</a>
+										<a class="status" href="#">${item.name } 110g</a>
 										<div class="rating">
 											<span class="glyphicon glyphicon-star-empty"></span> <span
 												class="glyphicon glyphicon-star-empty"></span> <span

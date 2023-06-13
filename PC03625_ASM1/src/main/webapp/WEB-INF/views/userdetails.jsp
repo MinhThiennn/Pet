@@ -27,10 +27,9 @@
 					<div class="col-lg-12">
 						<div class="row">
 							<div class="col-sm-6 form-group">
-								<br> Username:
-								<form:input path="username" placeholder="Username" class="form-control" />
+								<form:input path="username" placeholder="Username" hidden="hidden" />
 								<br> Password:
-								<form:input path="password" placeholder="Password"
+								<form:input type="password" path="password" placeholder="Password"
 									class="form-control" />
 								<br> Email:
 								<form:input path="email" placeholder="Email"
