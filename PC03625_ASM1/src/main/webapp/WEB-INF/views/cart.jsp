@@ -31,7 +31,7 @@
 			</thead>
 			<tbody>
 				<c:forEach var="item" items="${items }">
-					<form acction="/Fami/cart/update/${item.id}">
+					<form action="cart/update/${item.id}">
 						<tr>
 							<td data-th="Product">
 								<div class="row">
@@ -62,6 +62,7 @@
 						</tr>
 					</form>
 				</c:forEach>
+
 			</tbody>
 			<tfoot>
 				<tr class="visible-xs">
