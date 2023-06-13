@@ -44,6 +44,8 @@
 								<br> Address:
 								<form:input path="address" placeholder="Address"
 									class="form-control" />
+								<br> Activated: 
+								<label><input type="checkbox" name="activated" checked /></label>
 								<br> Image: <input type="file" name="photo_file"
 									value="${item.image }">
 							</div>
