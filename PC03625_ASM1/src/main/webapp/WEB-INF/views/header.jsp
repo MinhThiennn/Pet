@@ -31,7 +31,6 @@
 							<li><img src="../Asm-TaiNguyen/images/VI.gif" alt="">
 							</li>
 							<li class="dropdown"><a href="#" class="dropdown-toggle"
-<<<<<<< HEAD
 								data-toggle="dropdown"> <c:if test="${empty user}">
 										<span class="glyphicon glyphicon-user"></span> Tài khoản
 								</c:if> <c:if test="${!empty user}">
@@ -39,10 +38,8 @@
 											alt="">
 									</c:if>
 							</a>
-=======
 								data-toggle="dropdown"><span
 									class="glyphicon glyphicon-user"></span> User : ${user.username}</a>
->>>>>>> 88834c619173998f8969831dfe3dbac17a90ad40
 								<ul class="dropdown-menu">
 									<c:if test="${empty user}">
 										<li><a href="login">Đăng nhập</a></li>
