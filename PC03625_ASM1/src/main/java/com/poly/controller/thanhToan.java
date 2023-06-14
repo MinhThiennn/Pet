@@ -1,10 +1,12 @@
 package com.poly.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -50,6 +52,19 @@ public class thanhToan {
 		model.addAttribute("items", cartdetails);
 			
 		return "cart-tt";
+		
+	}
+	@ModelAttribute("thanhTien")
+	public Double tolal() {
+		Account acc = sessionService.get("user");
+		Cart cart = cartDAO.findByAccountUsername(acc.getUsername());
+		List<CartDetail> cartdetails = cartDetailsDAO.findByCartId(cart.getId());
+		Double total = 0.00;
+		for (CartDetail item : cartdetails) {
+			total = (Double) (total + (item.getProduct().getPrice() * item.getQuantity()));
+			System.out.println(total);
+		}
+		return total;
 	}
 	@RequestMapping("cart/thanhtoan/bill")
 	public String add(Model model, CartDetail cartdetail) {
