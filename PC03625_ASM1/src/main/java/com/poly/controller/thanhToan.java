@@ -73,9 +73,9 @@ public class thanhToan {
 		    orderDetail.setTong(cartDetail.getProduct().getPrice() * cartDetail.getQuantity());	    
 		    orderDetailsDAO.save(orderDetail);
 		}	
-		int cartid = cart.getId();
+		//int cartid = cart.getId();
 		//System.out.println("Cart id: " + cartid);
-		cartDetailsDAO.deleteByCartId(cartid);
+		cartDetailsDAO.deleteByCartId(cart.getId());
 		return "redirect:/Fami/cart-tt";
 	}
 }
