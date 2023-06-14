@@ -32,9 +32,9 @@
 								class="glyphicon glyphicon-align-justify"></span> DANH MỤC SẢN
 								PHẨM</a></li>
 						<li><a href="home">TRANG CHỦ</a></li>
-						<li><a href="dogshop">SHOP CHO CHÓ <span class="caret"></span></a></li>
-						<li><a href="catshop">SHOP CHO MÈO <span class="caret"></span></a></li>
-						<li><a href="tintuc">TIN TỨC <span class="caret"></span></a></li>
+						<li><a href="dogshop">SHOP CHO CHÓ </a></li>
+						<li><a href="catshop">SHOP CHO MÈO </a></li>
+						<li><a href="tintuc">TIN TỨC </a></li>
 						<li class="dropdown"><a href="gioithieu"
 							class="dropdown-toggle" data-toggle="dropdown">GIỚI THIỆU <span
 								class="caret"></span></a>

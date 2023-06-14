@@ -22,5 +22,5 @@ public interface ProductDAO extends JpaRepository <Product,Integer>{
 	
 	Page<Product> findAllByCategory(Category caterogy, Pageable pageable);
 	
-	
+
 }

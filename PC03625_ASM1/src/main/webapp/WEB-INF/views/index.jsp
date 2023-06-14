@@ -44,7 +44,7 @@
 								<div class="thumbnail">
 									<img src="/images/${item.image }"  alt="...">
 									<div class="caption text-center">
-										<a class="status" href="#">${item.name } 110g</a>
+										<a class="status" href="/Fami/sp-detail/${item.id}"> ${item.name}110g</a>
 										<div class="rating">
 											<span class="glyphicon glyphicon-star-empty"></span> <span
 												class="glyphicon glyphicon-star-empty"></span> <span
@@ -85,7 +85,7 @@
 								<div class="thumbnail">
 									<img src="/images/${item.image }"  alt="...">
 									<div class="caption text-center">
-										<a class="status" href="#">${item.name } 110g</a>
+										<a class="status" href="/Fami/sp-detail/${item.id}">${item.name} 110g</a>
 										<div class="rating">
 											<span class="glyphicon glyphicon-star-empty"></span> <span
 												class="glyphicon glyphicon-star-empty"></span> <span
@@ -101,7 +101,6 @@
 								</div>
 							</div>
 						</c:forEach>
-						
 					</div>
 				</div>
 			</article>
