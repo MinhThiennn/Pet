@@ -17,6 +17,7 @@ import com.poly.DAO.CartDAO;
 import com.poly.DAO.CartDetailsDAO;
 import com.poly.entity.Account;
 import com.poly.entity.Cart;
+import com.poly.entity.CartDetail;
 import com.poly.entity.ReportCountProduct;
 import com.poly.service.CookieService;
 import com.poly.service.ParamService;
@@ -70,7 +71,6 @@ public class loginController {
 			if (pw.equalsIgnoreCase(acc.getPassword())) {
 				sessionService.set("user", acc); // Lưu session
 				Cart cart = cartDAO.findByAccountUsername(un);
-
 				if (cart == null) {
 
 					// List<ReportCountProduct> countpr =
@@ -98,6 +98,14 @@ public class loginController {
 				return "login";
 			}
 		}
+//		Cart cart = cartDAO.findByAccountUsername(acc.getUsername());
+//		List<CartDetail> cartdetails = cartDetailsDAO.findByCartId(cart.getId());
+//		int soLuong = 0;
+//		for (CartDetail item : cartdetails) {
+//			soLuong = soLuong + 1;
+//			System.out.println(soLuong);
+//		}
+//		model.addAttribute("countpr",soLuong);
 		return "redirect:home";
 	}
 }

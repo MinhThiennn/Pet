@@ -96,7 +96,7 @@
 								<span class="glyphicon glyphicon-shopping-cart"></span>
 							</div>
 							<div class="content_hotline">
-								<a href="cart">(<c:if test="${empty user}">0</c:if> <c:if
+								<a href="cart">(<c:if test="${empty user}">0</c:if><c:if
 										test="${!empty user}">${countpr}</c:if>) Sản phẩm
 								</a><br> <span>GIỎ HÀNG</span>
 							</div>

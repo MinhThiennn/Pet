@@ -10,6 +10,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -19,6 +20,7 @@ import com.poly.DAO.CategoryDAO;
 import com.poly.DAO.ProductDAO;
 import com.poly.entity.Account;
 import com.poly.entity.Cart;
+import com.poly.entity.CartDetail;
 import com.poly.entity.Category;
 import com.poly.entity.Product;
 import com.poly.entity.ReportCountProduct;

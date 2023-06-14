@@ -37,4 +37,8 @@ public class indexController {
 	public String doimk() {
 		return "doimk";
 	}
+	@GetMapping("404page")
+	public String trangLoi() {
+		return "404page";	
+	}
 }
