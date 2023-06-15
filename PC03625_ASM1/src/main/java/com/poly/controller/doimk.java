@@ -32,7 +32,7 @@ public class doimk {
 			if(pwn.equals(pwcf)) {
 				acc1.setPassword(pwcf);
 				dao.save(acc1);
-				return "index";
+				return "redirect:home";
 			}else {
 				model.addAttribute("message", "Mật khẩu xác nhận không khớp !");
 				return "doimk";
