@@ -78,6 +78,7 @@ public class cartController {
 			cartdetail.setCart(cart);
 			cartdetail.setProduct(product);
 			cartdetail.setQuantity(1);
+			cartdetail.setStatus(false); 
 			cartDetailsDAO.save(cartdetail);
 		}else {
 			cartcheck.setQuantity(cartcheck.getQuantity()+sl);

@@ -54,9 +54,10 @@ public class thanhToan {
 		Cart cart = cartDAO.findByAccountUsername(acc.getUsername());
 		List<CartDetail> cartdetails = cartDetailsDAO.findByCartId(cart.getId());
 		Double total = 0.00;
+		boolean xacNhan = paramService.getBoolean("xacNhan", false);
 		for (CartDetail item : cartdetails) {
 			total = (Double) (total + (item.getProduct().getPrice() * item.getQuantity()));
-			System.out.println(total);
+			//System.out.println(total);
 		}
 		return total;
 	}
@@ -65,13 +66,15 @@ public class thanhToan {
 		Account acc = sessionService.get("user"); // lấy dữ liệu user đag đang nhập
 		//Product product = productDAO.findById(productid).get();
 		Cart cart = cartDAO.findByAccountUsername(acc.getUsername());
-		
 		Order order = new Order();
 		order.setAccount(cart.getAccount());
 		//order.setCreateDate(new Date());
 		order.setAddress(acc.getAddress());
-		orderDAO.save(order);
-		
+		orderDAO.save(order);		
+		String email = paramService.getString("email", "");
+		String dChi = paramService.getString("diaChi", "");
+		int sDT = paramService.getInt("sDT", 0);
+		//boolean xacNhan = paramService.getBoolean("xacNhan", false);
 		List<CartDetail> cartDetails = cart.getCartDetails();
 		for (CartDetail cartDetail : cartDetails) {
 		    OrderDetail orderDetail = new OrderDetail();
@@ -80,6 +83,9 @@ public class thanhToan {
 		    orderDetail.setQuantity(cartDetail.getQuantity());
 		    orderDetail.setPrice(cartDetail.getProduct().getPrice());
 		    orderDetail.setTong(cartDetail.getProduct().getPrice() * cartDetail.getQuantity());	    
+		    orderDetail.setEmail(email);
+		    orderDetail.setSdt(sDT);
+		    orderDetail.setAddress(dChi);
 		    orderDetailsDAO.save(orderDetail);
 		}	
 		//int cartid = cart.getId();

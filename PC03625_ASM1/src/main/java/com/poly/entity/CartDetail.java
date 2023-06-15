@@ -24,6 +24,7 @@ public class CartDetail {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	long id;
 	Integer quantity;
+	boolean Status;
 	@Temporal(TemporalType.DATE)
 	@Column(name = "Createdate")
 	Date createDate = new Date();
