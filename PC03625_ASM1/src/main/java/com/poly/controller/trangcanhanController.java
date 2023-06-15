@@ -52,10 +52,15 @@ public class trangcanhanController {
 		String filename = img.getOriginalFilename();
 		File file = new File(app.getRealPath("/images/" + filename));
 		img.transferTo(file);
-		item.setAdmin(false);
-		item.setActivated(true);
-		item.setImage(filename);
-		accountDAO.save(item);
+		Account acc = session.get("user"); 
+		if(acc.getAdmin()== true) {
+			acc.setAdmin(true);
+		}else {
+			acc.setAdmin(false);
+		}	
+		acc.setActivated(true);
+		acc.setImage(filename);
+		accountDAO.save(acc);
 		model.addAttribute("message", "Sửa sản phẩm thành công");
 		return "redirect:/Fami/trangcanhan";
 	}
