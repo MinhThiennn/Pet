@@ -53,7 +53,7 @@
 									maxFractionDigits="3" currencyCode="VND" pattern="#,##0.##" />₫</td>
 							<td><input type="number"
 									class="form-control text-center" name="quantity"
-									value="${item.quantity }" onblur="this.form.submit()"></td>
+									disabled="disabled" value="${item.quantity }" onblur="this.form.submit()"></td>
 							<%-- 						<td data-th="Subtotal" class="text-center">${item.product.price }</td> --%>
 							<td class="text-center"><fmt:formatNumber
 									value="${item.product.price * item.quantity}" type="currency"
@@ -67,7 +67,9 @@
 					</tbody>
 					<tfoot>
 					<tr>
-					<td class="fa fa-angle-right"><strong> <h3>Total : ${thanhTien}</h3></strong></td></tr></tfoot>
+					<td class="fa fa-angle-right"><strong> <h3>Total : <fmt:formatNumber
+									value="${thanhTien}" type="currency"
+									maxFractionDigits="3" currencyCode="VND" pattern="#,##0.##" />₫</h3></strong></td></tr></tfoot>
 					
 				</table>
 			</article>

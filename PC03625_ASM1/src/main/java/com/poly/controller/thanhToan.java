@@ -1,13 +1,10 @@
 package com.poly.controller;
-
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-
 import com.poly.DAO.CartDAO;
 import com.poly.DAO.CartDetailsDAO;
 import com.poly.DAO.OrderDAO;
@@ -16,7 +13,6 @@ import com.poly.DAO.ProductDAO;
 import com.poly.entity.Account;
 import com.poly.entity.Cart;
 import com.poly.entity.CartDetail;
-import com.poly.entity.Product;
 import com.poly.service.ParamService;
 import com.poly.service.SessionService;
 import com.poly.entity.Order;
@@ -50,6 +46,19 @@ public class thanhToan {
 		model.addAttribute("items", cartdetails);
 			
 		return "cart-tt";
+		
+	}
+	@ModelAttribute("thanhTien")
+	public Double tolal() {
+		Account acc = sessionService.get("user");
+		Cart cart = cartDAO.findByAccountUsername(acc.getUsername());
+		List<CartDetail> cartdetails = cartDetailsDAO.findByCartId(cart.getId());
+		Double total = 0.00;
+		for (CartDetail item : cartdetails) {
+			total = (Double) (total + (item.getProduct().getPrice() * item.getQuantity()));
+			System.out.println(total);
+		}
+		return total;
 	}
 	@RequestMapping("cart/thanhtoan/bill")
 	public String add(Model model, CartDetail cartdetail) {
@@ -73,9 +82,9 @@ public class thanhToan {
 		    orderDetail.setTong(cartDetail.getProduct().getPrice() * cartDetail.getQuantity());	    
 		    orderDetailsDAO.save(orderDetail);
 		}	
-		int cartid = cart.getId();
+		//int cartid = cart.getId();
 		//System.out.println("Cart id: " + cartid);
-		cartDetailsDAO.deleteByCartId(cartid);
+		cartDetailsDAO.deleteByCartId(cart.getId());
 		return "redirect:/Fami/cart-tt";
 	}
 }
