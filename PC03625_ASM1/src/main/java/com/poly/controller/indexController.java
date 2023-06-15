@@ -37,4 +37,8 @@ public class indexController {
 	public String doimk() {
 		return "doimk";
 	}
+	@GetMapping("tintuc")
+	public String tintuc() {
+		return "tintuc";
+	}
 }

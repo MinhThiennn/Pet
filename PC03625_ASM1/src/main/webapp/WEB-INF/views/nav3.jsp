@@ -12,7 +12,7 @@
 	crossorigin="anonymous">
 
 <!-- Poly -->
-<link href="../Asm-TaiNguyen/css/index.css" rel="stylesheet" />
+<link href="/Asm-TaiNguyen/css/chitiet.css" rel="stylesheet" />
 </head>
 <body>
 	<nav>
@@ -31,28 +31,28 @@
 						<li><a href=""><span
 								class="glyphicon glyphicon-align-justify"></span> DANH MỤC SẢN
 								PHẨM</a></li>
-						<li><a href="home">TRANG CHỦ</a></li>
-						<li><a href="dogshop">SHOP CHO CHÓ </a></li>
-						<li><a href="catshop">SHOP CHO MÈO </a></li>
-						<li><a href="tintuc">TIN TỨC </a></li>
-						<li class="dropdown"><a href="gioithieu"
+						<li><a href="/Fami/home">TRANG CHỦ</a></li>
+						<li><a href="/Fami/dogshop">SHOP CHO CHÓ </a></li>
+						<li><a href="/Fami/catshop">SHOP CHO MÈO </a></li>
+						<li><a href="/Fami/tintuc">TIN TỨC </a></li>
+						<li class="dropdown"><a href="/Fami/gioithieu"
 							class="dropdown-toggle" data-toggle="dropdown">GIỚI THIỆU <span
 								class="caret"></span></a>
 							<ul class="dropdown-menu">
-								<li><a href="gioithieu">Về chúng tôi</a></li>
+								<li><a href="/Fami/gioithieu">Về chúng tôi</a></li>
 								<li role="separator" class="divider"></li>
-								<li><a href="lienhe">Liên hệ</a></li>
+								<li><a href="/Fami/lienhe">Liên hệ</a></li>
 							</ul></li>
 						<c:if test="${user.admin == true }">
-							<li><a href="quanli">QUẢN LÍ</a></li>
+							<li><a href="/Fami/quanli">QUẢN LÍ</a></li>
 						</c:if>
-
 					</ul>
 					<!--Menu-->
 				</div>
 			</div>
 		</div>
 	</nav>
+
 	<div class="container-fluid">
 		<div id="carousel-example-generic" class="carousel slide"
 			data-ride="carousel" data-pause="hover" data-interval="3000">
@@ -67,16 +67,16 @@
 			<!-- Wrapper for slides -->
 			<div class="carousel-inner" role="listbox">
 				<div class="item active">
-					<img src="../Asm-TaiNguyen/images/slider_2.webp" alt="...">
+					<img src="/Asm-TaiNguyen/images/slider_2.webp" alt="...">
 				</div>
 				<div class="item">
-					<img src="../Asm-TaiNguyen/images/slider_3.webp" alt="...">
+					<img src="/Asm-TaiNguyen/images/slider_3.webp" alt="...">
 				</div>
 				<div class="item">
-					<img src="../Asm-TaiNguyen/images/slider_4.webp" alt="...">
+					<img src="/Asm-TaiNguyen/images/slider_4.webp" alt="...">
 				</div>
 				<div class="item">
-					<img src="../Asm-TaiNguyen/images/slider_5.webp" alt="...">
+					<img src="/Asm-TaiNguyen/images/slider_5.webp" alt="...">
 				</div>
 			</div>
 		</div>
