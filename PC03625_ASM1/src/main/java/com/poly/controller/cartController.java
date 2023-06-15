@@ -1,6 +1,8 @@
 package com.poly.controller;
 
 import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -66,21 +68,23 @@ public class cartController {
 	}
 
 	@RequestMapping("cart/add/{productid}")
-	public String add(Model model, CartDetail cartdetail, @PathVariable("productid") Integer productid) {
+	public String add(Model model, CartDetail cartdetail, @PathVariable("productid") Integer productid,  @PathVariable("quantity") Optional<Integer> quantity ) {
+		Integer sl = quantity.orElse(1);
 		Account acc = sessionService.get("user");
 		Cart cart = cartDAO.findByAccountUsername(acc.getUsername());
 		Product product = productDAO.findById(productid).get();
-		int idcart = cart.getId();
-		CartDetail cartcheck = cartDetailsDAO.findByProduct(product);
-		if (cartcheck != null) {
-			update(idcart, cartcheck.getQuantity()+1);
-		} else {
+		CartDetail cartcheck = cartDetailsDAO.findByCartAndProduct(cart,product);
+		if(cartcheck == null) {
 			cartdetail.setCart(cart);
 			cartdetail.setProduct(product);
 			cartdetail.setQuantity(1);
 			cartDetailsDAO.save(cartdetail);
+		}else {
+			cartcheck.setQuantity(cartcheck.getQuantity()+sl);
+			cartDetailsDAO.save(cartdetail);
 		}
-
+		
+		
 		return "redirect:/Fami/cart";
 	}
 
