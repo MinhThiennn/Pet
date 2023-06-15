@@ -25,7 +25,7 @@
 	
 	
 	<div class="container">
-	<form action="/Fami/sp-detail" method="post">
+	<form  method="post">
 		<div class="card">
 			<div class="container-fliud">
 				<div class="wrapper row">
@@ -57,9 +57,9 @@
 								votes)</strong>
 						</p>
 						<div class="action">
-							<button type="submit" class="btn btn-primary px-3">
-								<i class="fa fa-shopping-cart mr-1"></i>Add to cart
-							</button>
+							<a href="/Fami/cart/add/${load.id}" class="btn btn-primary px-3">
+								<i class="fa fa-shopping-cart mr-1"></i> Add to cart
+							</a>
 						</div>
 					</div>
 				</div>
