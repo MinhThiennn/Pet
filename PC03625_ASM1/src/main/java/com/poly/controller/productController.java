@@ -94,11 +94,18 @@ public class productController {
 	@RequestMapping("product/update")
 	public String update(Model model,Product item, @RequestParam("photo_file") MultipartFile img)
 			throws IllegalStateException, IOException {
-		String filename = img.getOriginalFilename();
-		File file = new File(app.getRealPath("/images/" + filename));
-		img.transferTo(file);
-		item.setImage(filename);
-		productDAO.save(item);
+		Product product = productDAO.findById(item.getId()).get();
+		if(img.isEmpty()) {
+			item.setImage(product.getImage());
+			productDAO.save(item);
+		}else {
+			String filename = img.getOriginalFilename();
+			File file = new File(app.getRealPath("/images/" + filename));
+			img.transferTo(file);
+			item.setImage(filename);
+			productDAO.save(item);
+		}
+		
 		model.addAttribute("message", "Sửa sản phẩm thành công");
 		return "redirect:/Fami/product";
 	}

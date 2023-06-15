@@ -79,17 +79,24 @@ public class userController {
 	@RequestMapping("user/update")
 	public String update(Model model,Account item, @RequestParam("photo_file") MultipartFile img, @RequestParam("activated") Boolean avt)
 			throws IllegalStateException, IOException {
-		String filename = img.getOriginalFilename();
-		File file = new File(app.getRealPath("/images/" + filename));
-		img.transferTo(file);
-		if(item.getAdmin()) {
-			item.setAdmin(true);
+		
+		Account account = accountDAO.findById(item.getUsername()).get();
+		if(img.isEmpty()) {
+			item.setImage(account.getImage());
+			accountDAO.save(item);
 		}else {
-			item.setAdmin(false);
+			String filename = img.getOriginalFilename();
+			File file = new File(app.getRealPath("/images/" + filename));
+			img.transferTo(file);
+			if(item.getAdmin()) {
+				item.setAdmin(true);
+			}else {
+				item.setAdmin(false);
+			}
+			item.setActivated(true);
+			accountDAO.save(item);
 		}
-		item.setActivated(avt);
-		item.setImage(filename);
-		accountDAO.save(item);
+		
 		model.addAttribute("message", "Sửa sản phẩm thành công");
 		return "redirect:/Fami/user";
 	}
