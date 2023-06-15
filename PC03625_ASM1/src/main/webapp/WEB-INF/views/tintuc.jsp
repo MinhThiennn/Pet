@@ -59,7 +59,7 @@
 					<div class="col-lg-7">
 						<div class="blog-item-info">
 
-							<h3 class="blog-item-name"><a href="/bien-thuc-an-kho-cua-cho-meo-tro-nen-hap-dan-va-ngon-mieng-hon">Biến thức ăn khô của chó mèo trở nên hấp dẫn và ngon miệng hơn</a>
+							<h3 class="blog-item-name"><a href="404page">Biến thức ăn khô của chó mèo trở nên hấp dẫn và ngon miệng hơn</a>
 							</h3>
 							<div class="date"><i class="fa fa-clock-o"></i> Wednesday,
 								<div class="news_home_content_short_time">
@@ -82,7 +82,7 @@
 				<div class="row">
 					<div class="col-lg-5">
 						<div class="blog-item-thumbnail">						
-							<a href="/khai-truong-famipet-co-so-2-tai-392-nguyen-trai-gan-duong-phung-khoang">
+							<a href="404page">
 								
 								<picture>
 									<source media="(max-width: 480px)" srcset="//bizweb.dktcdn.net/thumb/large/100/346/633/articles/800x800.jpg?v=1594735829437">
@@ -99,7 +99,7 @@
 					<div class="col-lg-7">
 						<div class="blog-item-info">
 
-							<h3 class="blog-item-name"><a href="/khai-truong-famipet-co-so-2-tai-392-nguyen-trai-gan-duong-phung-khoang">Khai Trương FamiPet cơ sở 2 tại 392 Nguyễn Trãi (Gần đường Phùng Khoang)</a>
+							<h3 class="blog-item-name"><a href="404page">Khai Trương FamiPet cơ sở 2 tại 392 Nguyễn Trãi (Gần đường Phùng Khoang)</a>
 							</h3>
 							<div class="date"><i class="fa fa-clock-o"></i> Tuesday,
 								<div class="news_home_content_short_time">
@@ -139,7 +139,7 @@
 					<div class="col-lg-7">
 						<div class="blog-item-info">
 
-							<h3 class="blog-item-name"><a href="/cach-dung-gel-dinh-duong-don-gian">Cách dùng gel dinh dưỡng đơn giản nhất quả đất!!</a>
+							<h3 class="blog-item-name"><a href="404page">Cách dùng gel dinh dưỡng đơn giản nhất quả đất!!</a>
 							</h3>
 							<div class="date"><i class="fa fa-clock-o"></i> Wednesday,
 								<div class="news_home_content_short_time">

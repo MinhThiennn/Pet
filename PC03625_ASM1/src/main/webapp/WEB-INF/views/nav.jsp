@@ -28,10 +28,8 @@
 				<div class="navbar-collapse collapse">
 					<!--Menu-->
 					<ul class="nav navbar-nav">
-						<li><a href=""><span
-								class="glyphicon glyphicon-align-justify"></span> DANH MỤC SẢN
-								PHẨM</a></li>
-						<li><a href="home">TRANG CHỦ</a></li>
+						<li><a href="home"><span class="glyphicon glyphicon-home"></span> TRANG CHỦ</a></li>
+					
 						<li><a href="dogshop">SHOP CHO CHÓ </a></li>
 						<li><a href="catshop">SHOP CHO MÈO </a></li>
 						<li><a href="tintuc">TIN TỨC </a></li>
