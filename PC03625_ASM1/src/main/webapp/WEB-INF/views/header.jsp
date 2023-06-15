@@ -60,6 +60,7 @@
 				</div>
 			</div>
 		</div>
+		
 		<div class="midbar panel-body">
 			<div class="container">
 				<div class="row">

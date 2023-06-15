@@ -16,6 +16,7 @@
 </head>
 <body>
 	<header class="header">
+	
 		<div class="topbar panel-heading">
 			<div class="container">
 				<div class="row">
@@ -30,7 +31,29 @@
 						<ul class="topbar_right">
 							<li><img src="/Asm-TaiNguyen/images/VI.gif" alt="">
 							</li>
-							<li><a href="/Fami/lienhe" class="hidden-md hidden-sm hidden-xs"><span
+							<li class="dropdown"><a href="#" class="dropdown-toggle"
+								data-toggle="dropdown"> <c:if test="${empty user}">
+										<span class="glyphicon glyphicon-user"></span> Tài khoản
+								</c:if> <c:if test="${!empty user}">
+										<img class="imageUser" width="30px" height="30px" src="/images/${user.image }"
+											alt="">
+									</c:if>
+							</a>
+								<ul class="dropdown-menu">
+									<c:if test="${empty user}">
+										<li><a href="login">Đăng nhập</a></li>
+										<li role="separator" class="divider"></li>
+										<li><a href="dangki">Đăng ký thành viên</a></li>
+									</c:if>
+
+									<c:if test="${!empty user}">
+										<li><a href="404page">Đổi mật khẩu</a></li>
+										<li role="separator" class="divider"></li>
+										<li><a href="trangcanhan">Trang cá nhân</a></li>
+										<li><a href="logout">Đăng xuất</a></li>
+									</c:if>
+								</ul></li>
+							<li><a href="lienhe" class="hidden-md hidden-sm hidden-xs"><span
 									class="glyphicon glyphicon-map-marker"></span> Hệ thống cửa
 									hàng</a></li>
 						</ul>
@@ -38,6 +61,9 @@
 				</div>
 			</div>
 		</div>
+		
+		
+		
 		<div class="midbar panel-body">
 			<div class="container">
 				<div class="row">

@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,61 +17,45 @@
 </head>
 <body>
 	<div class="container">
-			<div class="row main">
-		
-				<div class="panel-heading">
-	               <div class="panel-title col-lg-offset-5">
-	               
-	               		<a href = "home"><img src="../Asm-TaiNguyen/images/logo.webp" class="img-responsive" alt="" />
-	               		</a>
-	               	</div>
-	               	<hr>
-	            </div> 
-				<div class="main-login main-center">
-					<form class="form-horizontal" method="post" action="#">
+		<div class="row main">
 
-					
+			<div class="panel-heading">
+				<div class="panel-title col-lg-offset-5">
 
-						<div class="form-group">
-							<label for="username" class="cols-sm-2 control-label">Username</label>
-							<div class="cols-sm-10">
-								<div class="input-group">
-									<span class="input-group-addon"><i class="glyphicon glyphicon-user" aria-hidden="true"></i></span>
-									<input type="text" value="${user.username }" class="form-control" name="username" id="username"  placeholder="Enter your Username"/>
-								</div>
-							</div>
-						</div>
-
-						<div class="form-group">
-							<label for="password" class="cols-sm-2 control-label">Password</label>
-							<div class="cols-sm-10">
-								<div class="input-group">
-									<span class="input-group-addon"><i class="glyphicon glyphicon-lock" aria-hidden="true"></i></span>
-									<input type="password" class="form-control" name="password" id="password"  placeholder="Enter your Password"/>
-								</div>
-							</div>
-						</div>
-
-						<div class="form-group">
-							<label for="confirm" class="cols-sm-2 control-label">Confirm Password</label>
-							<div class="cols-sm-10">
-								<div class="input-group">
-									<span class="input-group-addon"><i class="glyphicon glyphicon-refresh" aria-hidden="true"></i></span>
-									<input type="password" class="form-control" name="confirm" id="confirm"  placeholder="Confirm your Password"/>
-								</div>
-							</div>
-						</div>
-						
-						<div class="form-group ">
-							<button type="button" class="btn  btn-lg btn-block login-button color">Change Password</button>
-						</div>
-						<div class="login-register">
-				            <a href="dangnhap">Login</a>
-				         </div>
-					</form>
+					<a href="home"><img src="../Asm-TaiNguyen/images/logo.webp"
+						class="img-responsive" alt="" /> </a>
 				</div>
-				
+				<hr>
 			</div>
+			
+			<div class="main-login main-center">
+				<form action="/Fami/doimk" method="post">
+					
+					<div class="form-group">
+						Old Password:<input type="password" name="psOld"/><br>
+						<input type="hidden" name = "user" value="user.username">
+					</div>
+					
+					<div class="form-group">
+						New Password:<input type="password" name="psNew"/><br>
+					</div>
+
+					<div class="form-group">
+						Confirm Password:<input type="password" name="psCf"/><br>
+					</div>
+						${message}
+					<div class="form-group ">
+						<input type = "submit" value="change"
+							class="btn  btn-lg btn-block login-button color"/>
+					</div>
+					<div class="login-register">
+						<a href="dangnhap">Login</a>
+					</div>
+					
+				</form>
+			</div>
+
 		</div>
+	</div>
 </body>
 </html>

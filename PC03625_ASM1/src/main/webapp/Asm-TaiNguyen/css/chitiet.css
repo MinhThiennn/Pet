@@ -36,7 +36,7 @@ header{
     margin: 14px 0 5px 0;
     position: relative;
 }
-nav{
+.navbar{
     background-color: #cc9966;
 }
 .navbar .collapse .nav li a{

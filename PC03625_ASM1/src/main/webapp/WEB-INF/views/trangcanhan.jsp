@@ -37,8 +37,8 @@
 								<form:input  value="${user.username}" path="username" placeholder="Username" 
 									class="form-control" disabled="disabled" />
 								<br>password :
-								<form:input value="${user.password}" path="password" placeholder="Password"
-									class="form-control" />
+								<form:input value="${user.password}" type ="password" path="password" placeholder="Password"
+									class="form-control" disabled ="disabled"/>
 								<br> Email:
 								<form:input value="${user.email}" path="email" placeholder="Email"
 									class="form-control" />
@@ -56,7 +56,7 @@
 									value="${user.image }">
 							</div>
 							<div class="col-sm-6">
-								<img src="/images/${user.image}" width="600px" style="margin-top: 30px; margin-left: 50px;">
+								<img src="/images/${user.image}" width="300px" style="margin-top: 30px; margin-left: 50px;">
 							</div>
 						</div>
 						${message }

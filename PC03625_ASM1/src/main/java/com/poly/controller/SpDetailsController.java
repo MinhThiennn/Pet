@@ -41,7 +41,7 @@ public class SpDetailsController {
 	return "sp-detail";
 	}
 	
-	@ModelAttribute("load")
+	@ModelAttribute("load") // ${load}
 	public Product load (Model model, @PathVariable("id")Integer id) {
 	Product entity = productDAO.getById(id);
 	return entity;
