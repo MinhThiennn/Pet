@@ -26,6 +26,9 @@ public interface CartDetailsDAO extends JpaRepository <CartDetail,Integer> {
 	List<ReportCountProduct> getCountProductCart(Integer id);
 
 	CartDetail findByProduct(Product product);
+	
 	@Transactional
 	void deleteByCartId(int cartId);
+	
+	CartDetail findByCartAndProduct(Cart cart, Product product);
 }
