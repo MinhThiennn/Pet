@@ -53,6 +53,6 @@ public class lichSuController {
 		}
 		orderDAO.delete(order);
 		
-		return "redirect:lichsu";
+		return "redirect:/Fami/lichsu";
 	}
 }
