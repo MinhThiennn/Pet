@@ -82,7 +82,7 @@
 					<div class="form-group">
 						<label for="exampleInputPassword1">Địa Chỉ:</label> <input
 							type="text" class="form-control" id="exampleInputPassword1"
-							placeholder="Địa Chỉ" value="${user.email}">
+							placeholder="Địa Chỉ" value="${user.diachi}">
 					</div>
 					<div class="form-group">
 						<label for="exampleInputPassword1">SĐT :</label> <input value="${user.sdt}"
