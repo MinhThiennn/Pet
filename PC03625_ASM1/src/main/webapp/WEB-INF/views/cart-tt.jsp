@@ -76,16 +76,16 @@
 			<aside class="col-sm-3">
 				<form>
 					<div class="form-group">
-						<label for="exampleInputEmail1">Email:</label> <input type="email"
+						<label for="exampleInputEmail1">Email:</label> <input type="email" value="${user.email}"
 							class="form-control" id="exampleInputEmail1" placeholder="Email">
 					</div>
 					<div class="form-group">
 						<label for="exampleInputPassword1">Địa Chỉ:</label> <input
 							type="text" class="form-control" id="exampleInputPassword1"
-							placeholder="Địa Chỉ">
+							placeholder="Địa Chỉ" value="${user.email}">
 					</div>
 					<div class="form-group">
-						<label for="exampleInputPassword1">SĐT :</label> <input
+						<label for="exampleInputPassword1">SĐT :</label> <input value="${user.sdt}"
 							type="text" class="form-control" id="exampleInputPassword1"
 							placeholder="Số điện thoại">
 					</div>

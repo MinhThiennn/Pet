@@ -15,6 +15,9 @@ import com.poly.entity.Cart;
 import com.poly.entity.CartDetail;
 import com.poly.service.ParamService;
 import com.poly.service.SessionService;
+
+import jakarta.servlet.http.HttpServletRequest;
+
 import com.poly.entity.Order;
 import com.poly.entity.OrderDetail;
 @Controller
@@ -38,6 +41,7 @@ public class thanhToan {
 	OrderDetailsDAO orderDetailsDAO;
 	@Autowired
 	ParamService paramService;
+
 	@RequestMapping("cart-tt")
 	public String thanhtoan(Model model) {
 		Account acc = sessionService.get("user");
@@ -62,18 +66,16 @@ public class thanhToan {
 		return total;
 	}
 	@RequestMapping("cart/thanhtoan/bill")
-	public String add(Model model, CartDetail cartdetail) {
+	public String add(Model model, CartDetail cartdetail, 	HttpServletRequest rq) {
 		Account acc = sessionService.get("user"); // lấy dữ liệu user đag đang nhập
 		//Product product = productDAO.findById(productid).get();
 		Cart cart = cartDAO.findByAccountUsername(acc.getUsername());
 		Order order = new Order();
 		order.setAccount(cart.getAccount());
 		//order.setCreateDate(new Date());
+		order.setStatus(false);
 		order.setAddress(acc.getAddress());
 		orderDAO.save(order);		
-		String email = paramService.getString("email", "");
-		String dChi = paramService.getString("diaChi", "");
-		int sDT = paramService.getInt("sDT", 0);
 		//boolean xacNhan = paramService.getBoolean("xacNhan", false);
 		List<CartDetail> cartDetails = cart.getCartDetails();
 		for (CartDetail cartDetail : cartDetails) {
@@ -83,11 +85,11 @@ public class thanhToan {
 		    orderDetail.setQuantity(cartDetail.getQuantity());
 		    orderDetail.setPrice(cartDetail.getProduct().getPrice());
 		    orderDetail.setTong(cartDetail.getProduct().getPrice() * cartDetail.getQuantity());	    
-		    orderDetail.setEmail(email);
-		    orderDetail.setSdt(sDT);
-		    orderDetail.setAddress(dChi);
+		    orderDetail.setEmail(acc.getEmail());
+		    orderDetail.setPhone(acc.getSdt());
+		    orderDetail.setAddress(acc.getAddress());
 		    orderDetailsDAO.save(orderDetail);
-		}	
+		}
 		//int cartid = cart.getId();
 		//System.out.println("Cart id: " + cartid);
 		cartDetailsDAO.deleteByCartId(cart.getId());
