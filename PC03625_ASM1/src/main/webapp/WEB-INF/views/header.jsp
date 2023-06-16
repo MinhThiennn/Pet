@@ -12,7 +12,7 @@
 	crossorigin="anonymous">
 
 <!-- Poly -->
-<link href="../Asm-TaiNguyen/css/index.css" rel="stylesheet" />
+<link href="../../../Asm-TaiNguyen/css/index.css" rel="stylesheet" />
 </head>
 <body>
 	<header class="header">
@@ -28,7 +28,7 @@
 					</div>
 					<div class="col-lg-6 col-md-5 col-sm-12 col-xs-12">
 						<ul class="topbar_right">
-							<li><img src="../Asm-TaiNguyen/images/VI.gif" alt="">
+							<li><img src="../../../Asm-TaiNguyen/images/VI.gif" alt="">
 							</li>
 							<li class="dropdown"><a href="#" class="dropdown-toggle"
 								data-toggle="dropdown"> <c:if test="${empty user}">
@@ -67,7 +67,7 @@
 					<div class="col-lg-3 col-md-3">
 						<div class="logo">
 							<a href="#" class="logo-wrapper "> <img
-								src="../Asm-TaiNguyen/images/logo.webp" alt="logo ">
+								src="../../../Asm-TaiNguyen/images/logo.webp" alt="logo ">
 							</a>
 						</div>
 					</div>

@@ -5,6 +5,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
 import com.poly.DAO.CartDAO;
 import com.poly.DAO.CartDetailsDAO;
 import com.poly.DAO.OrderDAO;
@@ -64,17 +66,14 @@ public class thanhToan {
 		return total;
 	}
 	@RequestMapping("cart/thanhtoan/bill")
-	public String add(Model model, CartDetail cartdetail) {
+	public String add(Model model, CartDetail cartdetai, @RequestParam("email") String email,@RequestParam("phone") Integer phone,@RequestParam("address") String address) {
 		Account acc = sessionService.get("user"); // lấy dữ liệu user đag đang nhập
 		//Product product = productDAO.findById(productid).get();
 		Cart cart = cartDAO.findByAccountUsername(acc.getUsername());
 		Order order = new Order();
 		order.setAccount(cart.getAccount());
 		//order.setCreateDate(new Date());
-		orderDAO.save(order);		
-		String email = paramService.getString("email", "");
-		String dChi = paramService.getString("diaChi", "");
-		int sDT = paramService.getInt("sDT", 0);
+		orderDAO.save(order);
 		//boolean xacNhan = paramService.getBoolean("xacNhan", false);
 		List<CartDetail> cartDetails = cart.getCartDetails();
 		for (CartDetail cartDetail : cartDetails) {
@@ -83,9 +82,10 @@ public class thanhToan {
 		    orderDetail.setProduct(cartDetail.getProduct());
 		    orderDetail.setQuantity(cartDetail.getQuantity());
 		    orderDetail.setPrice(cartDetail.getProduct().getPrice());
-		    orderDetail.setTong(cartDetail.getProduct().getPrice() * cartDetail.getQuantity());	    
+		    orderDetail.setTong(cartDetail.getProduct().getPrice() * cartDetail.getQuantity());
 		    orderDetail.setEmail(email);
-		    orderDetail.setAddress(dChi);
+		    orderDetail.setPhone(phone);
+		    orderDetail.setAddress(address);
 		    orderDetailsDAO.save(orderDetail);
 		}	
 		//int cartid = cart.getId();

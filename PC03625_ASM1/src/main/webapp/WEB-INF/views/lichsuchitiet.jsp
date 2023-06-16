@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,7 +19,7 @@
 <script src="../Asm-TaiNguyen/js/lichsu.js"></script>
 </head>
 <body>
-
+	<hr>
 	<div class="container-fluid">
 		<div class="panel panel-success">
 
@@ -42,9 +43,13 @@
 								<td class="text-center">${item.id }</td>
 								<td class="text-center">${item.product.name }</td>
 								<td class="text-center"><img src="/images/${item.product.image }" height="50px"></td>
-								<td class="text-center">${item.price }</td>
+								<td class="text-center"><fmt:formatNumber
+									value="${item.price}" type="currency"
+									maxFractionDigits="3" currencyCode="VND" pattern="#,##0.##" />₫</td>
 								<td class="text-center">${item.quantity }</td>
-								<td class="text-center">${item.tong }</td>
+								<td class="text-center"><fmt:formatNumber
+									value="${item.tong}" type="currency"
+									maxFractionDigits="3" currencyCode="VND" pattern="#,##0.##" />₫</td>
 								<td class="text-center"><a href="/Fami/lichsu" class="btn btn-danger">Quay lại</a></td>
 							</tr>
 						</c:forEach>

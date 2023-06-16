@@ -12,7 +12,7 @@
 	crossorigin="anonymous">
 
 <!-- Poly -->
-<link href="../Asm-TaiNguyen/css/index.css" rel="stylesheet" />
+<link href="../../../Asm-TaiNguyen/css/index.css" rel="stylesheet" />
 </head>
 <body>
 	
@@ -67,16 +67,16 @@
 			<!-- Wrapper for slides -->
 			<div class="carousel-inner" role="listbox">
 				<div class="item active">
-					<img src="../Asm-TaiNguyen/images/slider_2.webp" alt="...">
+					<img src="../../../Asm-TaiNguyen/images/slider_2.webp" alt="...">
 				</div>
 				<div class="item">
-					<img src="../Asm-TaiNguyen/images/slider_3.webp" alt="...">
+					<img src="../../../Asm-TaiNguyen/images/slider_3.webp" alt="...">
 				</div>
 				<div class="item">
-					<img src="../Asm-TaiNguyen/images/slider_4.webp" alt="...">
+					<img src="../../../Asm-TaiNguyen/images/slider_4.webp" alt="...">
 				</div>
 				<div class="item">
-					<img src="../Asm-TaiNguyen/images/slider_5.webp" alt="...">
+					<img src="../../../Asm-TaiNguyen/images/slider_5.webp" alt="...">
 				</div>
 			</div>
 		</div>

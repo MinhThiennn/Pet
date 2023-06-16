@@ -79,23 +79,22 @@
 				</form>
 			</article>
 			<aside class="col-sm-3">
-				<form>
+				<form action="thanhtoan/bill" method="post">
 					<div class="form-group">
 						<label for="exampleInputEmail1">Email:</label> <input type="email"
-							class="form-control" id="exampleInputEmail1" placeholder="Email">
+							class="form-control" id="exampleInputEmail1" placeholder="Email" name="email">
 					</div>
 					<div class="form-group">
 						<label for="exampleInputPassword1">Địa Chỉ:</label> <input
 							type="text" class="form-control" id="exampleInputPassword1"
-							placeholder="Địa Chỉ">
+							placeholder="Địa Chỉ" name="address">
 					</div>
 					<div class="form-group">
 						<label for="exampleInputPassword1">SĐT :</label> <input
 							type="text" class="form-control" id="exampleInputPassword1"
-							placeholder="Số điện thoại">
+							placeholder="Số điện thoại" name="phone">
 					</div>
-					<a type="button" href="cart/thanhtoan/bill" class="btn btn-success">Thanh
-						Toán</a>
+					<button class="btn btn-danger">Thanh toán</button>
 				</form>
 			</aside>
 		</div>
