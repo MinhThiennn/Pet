@@ -38,6 +38,8 @@ public class thanhToan {
 	OrderDetailsDAO orderDetailsDAO;
 	@Autowired
 	ParamService paramService;
+	
+	
 	@RequestMapping("cart-tt")
 	public String thanhtoan(Model model) {
 		Account acc = sessionService.get("user");
@@ -69,7 +71,6 @@ public class thanhToan {
 		Order order = new Order();
 		order.setAccount(cart.getAccount());
 		//order.setCreateDate(new Date());
-		order.setAddress(acc.getAddress());
 		orderDAO.save(order);		
 		String email = paramService.getString("email", "");
 		String dChi = paramService.getString("diaChi", "");
@@ -84,7 +85,6 @@ public class thanhToan {
 		    orderDetail.setPrice(cartDetail.getProduct().getPrice());
 		    orderDetail.setTong(cartDetail.getProduct().getPrice() * cartDetail.getQuantity());	    
 		    orderDetail.setEmail(email);
-		    orderDetail.setSdt(sDT);
 		    orderDetail.setAddress(dChi);
 		    orderDetailsDAO.save(orderDetail);
 		}	

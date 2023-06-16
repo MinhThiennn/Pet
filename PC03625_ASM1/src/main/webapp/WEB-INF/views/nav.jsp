@@ -15,6 +15,7 @@
 <link href="../Asm-TaiNguyen/css/index.css" rel="stylesheet" />
 </head>
 <body>
+	
 	<nav>
 		<div class="navbar navbar-default">
 			<div class="container">
@@ -33,7 +34,7 @@
 						<li><a href="dogshop">SHOP CHO CHÓ </a></li>
 						<li><a href="catshop">SHOP CHO MÈO </a></li>
 						<li><a href="tintuc">TIN TỨC </a></li>
-						<li><a href="404page">LỊCH SỬ</a></li>
+						<li><a href="lichsu">LỊCH SỬ</a></li>
 						<li class="dropdown"><a href="gioithieu"
 							class="dropdown-toggle" data-toggle="dropdown">GIỚI THIỆU <span
 								class="caret"></span></a>

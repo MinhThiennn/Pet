@@ -1,5 +1,6 @@
 package com.poly.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -59,13 +60,13 @@ public class cartController {
 //		cartDetailsDAO.save(cartdetail);
 //	}
 
-	@RequestMapping("cart/update/{id}")
-	public String update(@PathVariable("id") Integer id, @RequestParam("quantity") Integer quantity) {
-		CartDetail cartdetail = cartDetailsDAO.findById(id).get();
-		cartdetail.setQuantity(quantity);
-		cartDetailsDAO.save(cartdetail);
-		return "redirect:/Fami/cart";
-	}
+//	@RequestMapping("cart/update/{id}")
+//	public String update(@PathVariable("id") Integer id, @RequestParam("quantity") Integer quantity) {
+//		CartDetail cartdetail = cartDetailsDAO.findById(id).get();
+//		cartdetail.setQuantity(quantity);
+//		cartDetailsDAO.save(cartdetail);
+//		return "redirect:/Fami/cart";
+//	}
 
 	@RequestMapping("cart/add/{productid}")
 	public String add(Model model, CartDetail cartdetail, @PathVariable("productid") Integer productid,  @PathVariable("quantity") Optional<Integer> quantity ) {
@@ -82,9 +83,8 @@ public class cartController {
 			cartDetailsDAO.save(cartdetail);
 		}else {
 			cartcheck.setQuantity(cartcheck.getQuantity()+sl);
-			cartDetailsDAO.save(cartdetail);
+			cartDetailsDAO.save(cartcheck);
 		}
-		
 		
 		return "redirect:/Fami/cart";
 	}
@@ -92,6 +92,34 @@ public class cartController {
 	@RequestMapping("cart/remove/{id}")
 	public String remove(@PathVariable("id") Integer id) {
 		cartDetailsDAO.deleteById(id);
+		return "redirect:/Fami/cart";
+	}
+	
+	@RequestMapping("cart/updatetru/{id}")
+	public String updatetru(@PathVariable("id") Integer id) {
+		CartDetail cartdet = cartDetailsDAO.findById(id).get();
+		cartdet.setQuantity(cartdet.getQuantity() - 1);
+		cartDetailsDAO.save(cartdet);
+		return "redirect:/Fami/cart";
+	}
+	
+	@RequestMapping("cart/dathang")
+	public String thanhToan(Model model, @RequestParam("checkbox") List<Integer> checkbox) {
+		List<CartDetail> list = new ArrayList<>();
+		for (Integer item : checkbox) {
+			CartDetail cartdetalitotal = cartDetailsDAO.findById(item).get();
+			list.add(cartdetalitotal);
+		}
+		model.addAttribute("cartdetil", list);
+
+		return "cart-tt";
+	}
+	
+	@RequestMapping("cart/updatecong/{id}")
+	public String updatcong(@PathVariable("id") Integer id) {
+		CartDetail cartdet = cartDetailsDAO.findById(id).get();
+		cartdet.setQuantity(cartdet.getQuantity() + 1);
+		cartDetailsDAO.save(cartdet);
 		return "redirect:/Fami/cart";
 	}
 }

@@ -24,7 +24,8 @@ public class Order implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	long id;
-	Boolean status;
+	String status;
+	String address;
 	
 	@Temporal(TemporalType.DATE)
 	@Column(name = "Createdate")
