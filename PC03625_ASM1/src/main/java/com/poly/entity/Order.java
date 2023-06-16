@@ -24,13 +24,16 @@ public class Order implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	long id;
-	String Address;
+	Boolean status;
+	
 	@Temporal(TemporalType.DATE)
 	@Column(name = "Createdate")
 	Date createDate = new Date();
+	
 	@ManyToOne
 	@JoinColumn(name = "Username")
 	Account account;
+	
 	@OneToMany(mappedBy = "order")
 	List<OrderDetail> orderDetails;
 }
