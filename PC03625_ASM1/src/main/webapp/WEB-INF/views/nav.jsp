@@ -12,9 +12,10 @@
 	crossorigin="anonymous">
 
 <!-- Poly -->
-<link href="../Asm-TaiNguyen/css/index.css" rel="stylesheet" />
+<link href="../../../Asm-TaiNguyen/css/index.css" rel="stylesheet" />
 </head>
 <body>
+	
 	<nav>
 		<div class="navbar navbar-default">
 			<div class="container">
@@ -33,7 +34,7 @@
 						<li><a href="dogshop">SHOP CHO CHÓ </a></li>
 						<li><a href="catshop">SHOP CHO MÈO </a></li>
 						<li><a href="tintuc">TIN TỨC </a></li>
-						<li><a href="404page">LỊCH SỬ</a></li>
+						<li><a href="lichsu">LỊCH SỬ</a></li>
 						<li class="dropdown"><a href="gioithieu"
 							class="dropdown-toggle" data-toggle="dropdown">GIỚI THIỆU <span
 								class="caret"></span></a>
@@ -66,16 +67,16 @@
 			<!-- Wrapper for slides -->
 			<div class="carousel-inner" role="listbox">
 				<div class="item active">
-					<img src="../Asm-TaiNguyen/images/slider_2.webp" alt="...">
+					<img src="../../../Asm-TaiNguyen/images/slider_2.webp" alt="...">
 				</div>
 				<div class="item">
-					<img src="../Asm-TaiNguyen/images/slider_3.webp" alt="...">
+					<img src="../../../Asm-TaiNguyen/images/slider_3.webp" alt="...">
 				</div>
 				<div class="item">
-					<img src="../Asm-TaiNguyen/images/slider_4.webp" alt="...">
+					<img src="../../../Asm-TaiNguyen/images/slider_4.webp" alt="...">
 				</div>
 				<div class="item">
-					<img src="../Asm-TaiNguyen/images/slider_5.webp" alt="...">
+					<img src="../../../Asm-TaiNguyen/images/slider_5.webp" alt="...">
 				</div>
 			</div>
 		</div>

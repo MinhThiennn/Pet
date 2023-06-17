@@ -23,7 +23,7 @@ public class OrderDetail implements Serializable {
 	Double tong;
 	String email;
 	String address;
-	int phone;
+	Integer phone;
 	
 	@ManyToOne
 	@JoinColumn(name = "Productid")

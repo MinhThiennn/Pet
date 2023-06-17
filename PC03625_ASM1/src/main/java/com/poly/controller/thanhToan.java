@@ -5,6 +5,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import java.util.ArrayList;
 import com.poly.DAO.CartDAO;
 import com.poly.DAO.CartDetailsDAO;
 import com.poly.DAO.OrderDAO;
@@ -15,9 +17,6 @@ import com.poly.entity.Cart;
 import com.poly.entity.CartDetail;
 import com.poly.service.ParamService;
 import com.poly.service.SessionService;
-
-import jakarta.servlet.http.HttpServletRequest;
-
 import com.poly.entity.Order;
 import com.poly.entity.OrderDetail;
 @Controller
@@ -65,18 +64,26 @@ public class thanhToan {
 		}
 		return total;
 	}
-	@RequestMapping("cart/thanhtoan/bill")
-	public String add(Model model, CartDetail cartdetail, 	HttpServletRequest rq) {
+	@ModelAttribute("STT")
+	public int Stt() {
+		Account acc = sessionService.get("user");
+		Cart cart = cartDAO.findByAccountUsername(acc.getUsername());
+		List<CartDetail> cartdetails = cartDetailsDAO.findByCartId(cart.getId());
+		int stt = 0;
+		for (CartDetail item : cartdetails) {
+			stt++;
+		}
+		return stt;
+	}
+	@RequestMapping("thanhtoan/bill")
+	public String add(Model model, CartDetail cartdetai, @RequestParam("email") String email,@RequestParam("phone") Integer phone,@RequestParam("address") String address) {
 		Account acc = sessionService.get("user"); // lấy dữ liệu user đag đang nhập
 		//Product product = productDAO.findById(productid).get();
 		Cart cart = cartDAO.findByAccountUsername(acc.getUsername());
 		Order order = new Order();
 		order.setAccount(cart.getAccount());
 		//order.setCreateDate(new Date());
-		order.setStatus(false);
-		order.setAddress(acc.getAddress());
-		orderDAO.save(order);		
-		//boolean xacNhan = paramService.getBoolean("xacNhan", false);
+		orderDAO.save(order);
 		List<CartDetail> cartDetails = cart.getCartDetails();
 		for (CartDetail cartDetail : cartDetails) {
 		    OrderDetail orderDetail = new OrderDetail();
@@ -84,12 +91,12 @@ public class thanhToan {
 		    orderDetail.setProduct(cartDetail.getProduct());
 		    orderDetail.setQuantity(cartDetail.getQuantity());
 		    orderDetail.setPrice(cartDetail.getProduct().getPrice());
-		    orderDetail.setTong(cartDetail.getProduct().getPrice() * cartDetail.getQuantity());	    
-		    orderDetail.setEmail(acc.getEmail());
-		    orderDetail.setPhone(acc.getSdt());
-		    orderDetail.setAddress(acc.getAddress());
+		    orderDetail.setTong(cartDetail.getProduct().getPrice() * cartDetail.getQuantity());
+		    orderDetail.setEmail(email);
+		    orderDetail.setPhone(phone);
+		    orderDetail.setAddress(address);
 		    orderDetailsDAO.save(orderDetail);
-		}
+		}	
 		//int cartid = cart.getId();
 		//System.out.println("Cart id: " + cartid);
 		cartDetailsDAO.deleteByCartId(cart.getId());

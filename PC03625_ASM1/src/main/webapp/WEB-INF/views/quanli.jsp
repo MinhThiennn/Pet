@@ -33,7 +33,7 @@
 					<li><a href="user" target="link"><i
 							class="fa fa-sort-alpha-asc " aria-hidden="true"> </i> <span
 							style="margin-left: 10px;">Users</span> </a></li>
-					<li><a href="userform" target="link"> <i
+					<li><a href="adminlichsu" target="link"> <i
 							class="fa fa-font" aria-hidden="true"> </i> <span
 							style="margin-left: 10px;"> Section</span>
 					</a></li>
