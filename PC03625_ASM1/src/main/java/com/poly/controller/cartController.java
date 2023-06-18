@@ -102,18 +102,16 @@ public class cartController {
 		cartDetailsDAO.save(cartdet);
 		return "redirect:/Fami/cart";
 	}
-	
-	@RequestMapping("cart/dathang")
-	public String thanhToan(Model model, @RequestParam("checkbox") List<Integer> checkbox) {
-		List<CartDetail> list = new ArrayList<>();
-		for (Integer item : checkbox) {
-			CartDetail cartdetalitotal = cartDetailsDAO.findById(item).get();
-			list.add(cartdetalitotal);
-		}
-		model.addAttribute("cartdetil", list);
-
-		return "redirect:/Fami/cart-tt";
-	}
+//	@RequestMapping("cart/dathang")
+//	public String thanhToan(Model model, @RequestParam("checkbox") List<Integer> checkbox) {
+//		List<CartDetail> list = new ArrayList<>();
+//		for (Integer item : checkbox) {
+//			CartDetail cartdetalitotal = cartDetailsDAO.findById(item).get();
+//			list.add(cartdetalitotal);
+//		}
+//		model.addAttribute("cartdetail", list);
+//		return "redirect:/Fami/cart-tt";
+//	}
 	
 	@RequestMapping("cart/updatecong/{id}")
 	public String updatcong(@PathVariable("id") Integer id) {

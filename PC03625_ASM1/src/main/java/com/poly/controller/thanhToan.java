@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import java.util.ArrayList;
@@ -17,6 +19,9 @@ import com.poly.entity.Cart;
 import com.poly.entity.CartDetail;
 import com.poly.service.ParamService;
 import com.poly.service.SessionService;
+
+import jakarta.persistence.metamodel.SetAttribute;
+
 import com.poly.entity.Order;
 import com.poly.entity.OrderDetail;
 @Controller
@@ -47,9 +52,14 @@ public class thanhToan {
 		Cart cart = cartDAO.findByAccountUsername(acc.getUsername());
 		List<CartDetail> cartdetails = cartDetailsDAO.findByCartId(cart.getId());
 		model.addAttribute("items", cartdetails);
-			
+		model.addAttribute("check", false);
 		return "cart-tt";
 		
+	}
+	@RequestMapping("cart-tt/remove/{id}")
+	public String remove(@PathVariable("id") Integer id) {
+		cartDetailsDAO.deleteById(id);
+		return "redirect:/Fami/cart-tt";
 	}
 	@ModelAttribute("thanhTien")
 	public Double tolal() {
@@ -57,25 +67,13 @@ public class thanhToan {
 		Cart cart = cartDAO.findByAccountUsername(acc.getUsername());
 		List<CartDetail> cartdetails = cartDetailsDAO.findByCartId(cart.getId());
 		Double total = 0.00;
-		boolean xacNhan = paramService.getBoolean("xacNhan", false);
 		for (CartDetail item : cartdetails) {
 			total = (Double) (total + (item.getProduct().getPrice() * item.getQuantity()));
 			//System.out.println(total);
 		}
 		return total;
 	}
-	@ModelAttribute("STT")
-	public int Stt() {
-		Account acc = sessionService.get("user");
-		Cart cart = cartDAO.findByAccountUsername(acc.getUsername());
-		List<CartDetail> cartdetails = cartDetailsDAO.findByCartId(cart.getId());
-		int stt = 0;
-		for (CartDetail item : cartdetails) {
-			stt++;
-		}
-		return stt;
-	}
-	@RequestMapping("thanhtoan/bill")
+	@PostMapping("cart-tt")
 	public String add(Model model, CartDetail cartdetai, @RequestParam("email") String email,@RequestParam("phone") Integer phone,@RequestParam("address") String address) {
 		Account acc = sessionService.get("user"); // lấy dữ liệu user đag đang nhập
 		//Product product = productDAO.findById(productid).get();
@@ -100,6 +98,7 @@ public class thanhToan {
 		//int cartid = cart.getId();
 		//System.out.println("Cart id: " + cartid);
 		cartDetailsDAO.deleteByCartId(cart.getId());
-		return "redirect:/Fami/cart-tt";
+		model.addAttribute("check", true);
+		return "cart-tt";
 	}
 }

@@ -55,7 +55,6 @@
 			<table id="cart" class="table table-hover table-condensed">
 				<thead>
 					<tr>
-						<th></th>
 						<th style="width: 50%">Product</th>
 						<th style="width: 10%" class="text-center">Price</th>
 						<th style="width: 8%" class="text-center">Quantity</th>
@@ -65,9 +64,7 @@
 				</thead>
 				<tbody>
 					<c:forEach var="item" items="${items }">
-
 						<tr>
-							<td><input type="checkbox" name="checkbox" value="${item.id }" class="text-center"></td>
 							<td data-th="Product">
 								<div class="row">
 									<div class="col-sm-2 hidden-xs">
@@ -110,9 +107,9 @@
 						<td><a href="/Fami/home" class="btn btn-warning"><i
 								class="fa fa-angle-left"></i> Tiếp Tục Mua Sắm</a></td>
 						<td colspan="2" class="hidden-xs"></td>
-						<td><button class="btn btn-success btn-block">Checkout
+						<td><a type="button" href="/Fami/cart-tt" class="btn btn-success btn-block">Checkout
 								<i class="fa fa-angle-right"></i>
-						</button></td>
+						</a></td>
 					</tr>
 				</tfoot>
 			</table>
